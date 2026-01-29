@@ -1,0 +1,159 @@
+{
+  "navbar": {
+    "thesis": "Tesis",
+    "divisions": "Divisiones",
+    "school": "Escuela",
+    "investors": "Inversores",
+    "home": "Inicio",
+    "request_invite": "Solicitar Invitación"
+  },
+  "hero": {
+    "title": "CAPITAL NACIONAL. VISIÓN GLOBAL.",
+    "subtitle": "Transformamos la volatilidad financiera en activos productivos reales. El vehículo de inversión definitivo para la Argentina que viene.",
+    "cta": "NUESTRA TESIS DE INVERSIÓN"
+  },
+  "principles": {
+    "title": "NO ESPECULAMOS. CONSTRUIMOS.",
+    "body_1": "En un mundo obsesionado con el próximo trimestre, Falcón Pampas opera con la paciencia de las décadas. No somos un fondo de cobertura tradicional; somos un Holding Operativo.",
+    "body_2": "Utilizamos la inteligencia de los mercados financieros y la deuda soberana como motor para adquirir, potenciar y operar los activos que el mundo necesita desesperadamente: Alimentos y Energía.",
+    "body_3": "Creemos que Argentina presenta hoy la asimetría de valor más grande del hemisferio occidental. Mientras otros ven riesgo, nosotros vemos el precio de entrada a una potencia productiva."
+  },
+  "ecosystem": {
+    "title": "NUESTRO MOTOR DE DOBLE TIEMPO",
+    "step_1_title": "Gestión de Liquidez (Nacionalizadas)",
+    "step_1_desc": "El Combustible (Mercados de Capitales): A través de nuestra división de Tesorería y Nacionalizadas, gestionamos posiciones en deuda soberana y corporativa para generar un flujo de caja constante y previsible, protegiendo el capital de la inflación.",
+    "step_2_title": "Economía Real",
+    "step_2_desc": "La Estructura (Economía Real): Ese flujo no se retribuye en dividendos efímeros; se inyecta directamente en la adquisición de compañías estratégicas en Agroindustria, Vaca Muerta y Real Estate.",
+    "result": "El Resultado: Un ciclo de interés compuesto donde el capital financiero se blinda con activos tangibles."
+  },
+  "divisions": {
+    "title": "DIVISIONES DE INVERSIÓN",
+    "card_1_title": "RENTA FIJA & MERCADOS",
+    "card_1_desc": "Gestión estratégica de Bonos, BOPREAL y Letras. Liquidez y Cobertura.",
+    "card_2_title": "AGROINDUSTRIA",
+    "card_2_desc": "Procesamiento, logística y exportación. Valor agregado al campo argentino.",
+    "card_3_title": "ENERGÍA & MINERÍA",
+    "card_3_desc": "Infraestructura crítica en Vaca Muerta y Litio. Soberanía energética.",
+    "card_4_title": "FALCÓN VENTURES",
+    "card_4_desc": "Capital semilla para el talento tecnológico y AgTech nacional.",
+    "cta_explore": "Explorar"
+  },
+  "authority": {
+    "title": "NUESTRA VISIÓN PARA LOS PRÓXIMOS 50 AÑOS",
+    "quote": "\"El verdadero riesgo no es la volatilidad del mercado, sino la pérdida permanente de capital por no entender lo que se posee. En Falcón Pampas, solo invertimos en lo que podemos tocar, entender y mejorar.\"",
+    "source": "— Del Manifiesto Fundacional.",
+    "cta": "LEER LA CARTA DEL DIRECTORIO"
+  },
+  "school": {
+    "title": "UN LEGADO DE EDUCACIÓN",
+    "body": "Creemos que la recuperación de Argentina comienza por la educación financiera de sus ciudadanos. Por eso, hemos abierto nuestra \"Escuela de Soberanía Financiera\". Acceda a las mismas tesis, análisis y herramientas que utilizamos internamente, de forma totalmente gratuita.",
+    "cta": "ACCEDER A LA ACADEMIA"
+  },
+  "footer": {
+    "slogan": "Capital Nacional. Visión Global.",
+    "nav_about": "Quiénes Somos",
+    "nav_thesis": "Tesis de Inversión",
+    "nav_press": "Prensa",
+    "nav_school": "Escuela Falcón",
+    "address": "Oficina Central: Puerto Madero, Buenos Aires",
+    "legal": "Falcón Pampas Holdings S.A. no garantiza rendimientos futuros. Las inversiones en mercados emergentes conllevan riesgos. Lea el prospecto completo antes de invertir. © 2024 Falcón Pampas. Todos los derechos reservados."
+  },
+  "thesis_page": {
+    "hero": {
+      "title": "EL ARBITRAJE DE UNA GENERACIÓN",
+      "subtitle": "Por qué creemos que Argentina ofrece la mayor asimetría entre Precio y Valor del mercado global."
+    },
+    "premise": {
+      "title": "PRECIO VS. VALOR",
+      "text_1": "Los mercados financieros suelen ser eficientes, excepto cuando el miedo nubla la razón. En Argentina, la percepción de riesgo ha desconectado históricamente el precio de los activos de su capacidad real de producción.",
+      "text_2": "En Falcón Pampas, no miramos el riesgo país de la pantalla de Bloomberg; miramos la geología de Vaca Muerta, la fotosíntesis de la Pampa Húmeda y el talento de nuestros ingenieros.",
+      "text_3": "Nuestra tesis es simple: Compramos activos irreproducibles a precios de liquidación, financiados por la propia ineficiencia del mercado de deuda."
+    },
+    "model": {
+      "title": "INGENIERÍA FINANCIERA AL SERVICIO DE LA ECONOMÍA REAL",
+      "col_1_title": "El Combustible (Renta Fija & Nacionalizadas)",
+      "col_1_text": "A diferencia de los fondos tradicionales que buscan ganancias de capital rápidas vendiendo y comprando acciones, nosotros utilizamos la deuda soberana y sub-soberana (Instrumentos Nacionalizados, Bonos Provinciales, BOPREAL) con un fin estratégico: Generar Flujo de Caja (Float). Aprovechamos los altos rendimientos actuales de estos instrumentos para crear una tesorería robusta y líquida. No especulamos con el default; gestionamos la curva de tasas para financiarnos a costo negativo.",
+      "col_2_title": "El Destino (Private Equity)",
+      "col_2_text": "Esa liquidez generada no se queda en el sistema financiero. Se utiliza para adquirir participaciones de control en empresas que producen bienes tangibles: alimentos, energía y ladrillos. Esto nos permite comprar empresas sin endeudarnos externamente, dándonos la libertad de esperar a que maduren sus proyectos sin la presión de los bancos."
+    },
+    "vectors": {
+      "v1_title": "SOBERANÍA ALIMENTARIA (Agroindustria)",
+      "v1_text": "La Fábrica a Cielo Abierto. No solo compramos tierra. Invertimos en la cadena de valor: desde la genética de la semilla hasta la logística fluvial. El mundo demanda proteínas y Argentina es uno de los pocos garantes de la seguridad alimentaria global. Buscamos compañías con ventajas competitivas en procesamiento y exportación, transformando commodities en productos de marca.",
+      "v2_title": "INDEPENDENCIA ENERGÉTICA (Vaca Muerta & Minería)",
+      "v2_text": "La Energía del Futuro. Vaca Muerta no es una promesa; es una realidad geológica de clase mundial. Falcón Pampas se posiciona en el Midstream (transporte y tratamiento) y en servicios petroleros. Además, miramos hacia el Norte: el Litio y el Cobre son los minerales de la transición energética, y nosotros proveemos el capital paciente que la minería sustentable requiere.",
+      "v3_title": "REFUGIO DE VALOR (Real Estate Distressed)",
+      "v3_text": "Ladrillos Inteligentes. El mercado inmobiliario argentino ha sufrido correcciones severas, llevando el valor del metro cuadrado a mínimos históricos en dólares. Adquirimos activos \"Trofeo\" —edificios corporativos clase A, centros logísticos y tierras estratégicas— que son imposibles de replicar al costo actual de construcción. Compramos metros cuadrados, esperamos la revalorización patrimonial."
+    },
+    "advantage": {
+      "quote": "\"Nuestra ventaja no es solo analítica, es temperamental. Tenemos la capacidad de mantenernos firmes cuando el mercado entra en pánico, y la disciplina de no comprar cuando el mercado está eufórico. El interés compuesto es la octava maravilla del mundo, pero solo funciona si no se interrumpe.\""
+    },
+    "risk": {
+      "title": "GESTIÓN DE RIESGO",
+      "p1_title": "Diversificación Estructural:",
+      "p1_text": "No ponemos todos los huevos en la misma canasta. Equilibramos Renta Fija (Bonos) con Renta Variable (Acciones) y Activos Reales (Propiedades).",
+      "p2_title": "Cobertura de Moneda:",
+      "p2_text": "Todas nuestras tesis de inversión están pensadas para preservar el valor en moneda dura (Dólar/Oro), independientemente de la política monetaria local.",
+      "p3_title": "Margen de Seguridad:",
+      "p3_text": "Solo compramos cuando el precio es significativamente menor al valor conservadoramente calculado. Si no hay margen, no hay trato."
+    },
+    "closing": {
+      "title": "SEA PARTE DE LA RECONSTRUCCIÓN.",
+      "text": "Falcón Pampas no es para todos. Es para quienes entienden que la riqueza real se construye acompañando el desarrollo de una nación. Si comparte nuestra visión de largo plazo y nuestra fe racional en la Argentina, lo invitamos a conversar.",
+      "cta": "CONTACTAR CON RELACIÓN CON INVERSORES"
+    }
+  },
+  "divisions_page": {
+    "hero": {
+      "title": "ECOSISTEMA OPERATIVO",
+      "subtitle": "Cuatro motores especializados. Una sola dirección estratégica. Gestionamos el ciclo completo del capital: desde la liquidez financiera hasta la producción industrial."
+    },
+    "intro": {
+      "text": "En Falcón Pampas, nuestras divisiones no operan en silos aislados. Funcionan como un organismo vivo. Nuestra mesa de Mercados de Capitales genera la liquidez que nuestra división de Private Equity utiliza para adquirir activos reales. A su vez, nuestra división de Ventures inyecta tecnología para optimizar esos activos, mientras nuestra cartera de Equity Bursátil nos da exposición líquida a los líderes del mercado."
+    },
+    "cap": {
+      "title": "RENTA FIJA & TESORERÍA ESTRATÉGICA",
+      "subtitle": "El Motor de Liquidez.",
+      "desc_1": "Nuestra división de Mercados de Capitales es el punto de partida del ciclo de inversión. Nos especializamos en el arbitraje y posicionamiento estratégico en deuda soberana y sub-soberana argentina (Nacionalizadas).",
+      "desc_2": "No operamos buscando el trade diario, sino el flujo de fondos estructural. Aprovechamos las distorsiones de la curva de rendimientos para generar un Cash Flow (Float) constante en moneda dura, que sirve como combustible para nuestras inversiones en la economía real.",
+      "points": {
+        "p1": "Deuda Soberana y Provincial: Análisis de solvencia fiscal de provincias estratégicas (Mendoza, Córdoba, Neuquén) y Nación.",
+        "p2": "Instrumentos de Regularización (BOPREAL): Estrategias de cobertura para importadores y gestión de pasivos.",
+        "p3": "Financiamiento Corporativo: Estructuración de Obligaciones Negociables (ONs) para empresas de primera línea."
+      }
+    },
+    "real": {
+      "title": "ECONOMÍA REAL & CONTROL",
+      "subtitle": "La Fortaleza Patrimonial.",
+      "desc": "Aquí transformamos el capital financiero en activos tangibles e irreproducibles. Esta división adquiere participaciones mayoritarias o de control en compañías con ventajas competitivas duraderas (Moats) y gestión probada. Nuestra filosofía es de dueños permanentes: compramos para operar, optimizar y crecer durante décadas.",
+      "sectors": {
+        "s1_title": "Agroindustria Integrada:",
+        "s1_text": "No solo tierra. Invertimos en la cadena de transformación: plantas de acopio, semilleras y logística fluvial. Convertimos granos en valor agregado.",
+        "s2_title": "Energía & Infraestructura (Vaca Muerta):",
+        "s2_text": "Participación en empresas de servicios petroleros (Midstream), transporte de gas y proyectos de minería sustentable (Litio) que alimentan la transición energética global.",
+        "s3_title": "Real Estate Distressed:",
+        "s3_text": "Adquisición de activos inmobiliarios premium (Oficinas AAA, Centros Logísticos) a valores de reposición históricamente bajos."
+      }
+    },
+    "equity": {
+      "title": "RENTA VARIABLE & VALOR BURSÁTIL",
+      "subtitle": "Participación Institucional.",
+      "desc_1": "A través del \"Fondo de Valor Argentino\", tomamos posiciones estratégicas minoritarias en las compañías públicas más importantes del país (Bancos, Utilities, Telecomunicaciones).",
+      "desc_2": "Aplicamos un análisis fundamental riguroso para identificar discrepancias masivas entre el precio de la acción y el valor intrínseco del negocio. Actuamos como accionistas institucionales activos, promoviendo el gobierno corporativo y la creación de valor a largo plazo."
+    },
+    "tech": {
+      "title": "VENTURE CAPITAL & TECNOLOGÍA",
+      "subtitle": "La Aceleración del Futuro.",
+      "desc_1": "Argentina exporta reactores nucleares y unicornios de software. Falcón Ventures es nuestro brazo de capital de riesgo, enfocado en startups que resuelven problemas estructurales de la economía.",
+      "desc_2": "Buscamos la sinergia: Invertimos en AgTech (tecnología para el agro) y FinTech que puedan ser utilizadas inmediatamente por nuestras empresas de la División de Private Equity, creando un ecosistema de retroalimentación tecnológica."
+    },
+    "synergy": {
+      "title": "EL EFECTO MULTIPLICADOR",
+      "text": "La verdadera potencia de Falcón Pampas reside en la intersección de sus divisiones. Tenemos la capacidad única de mover capital instantáneamente desde un instrumento financiero líquido hacia un proyecto de infraestructura a 10 años. Esta flexibilidad nos permite ser defensivos en tiempos de crisis y agresivos en tiempos de bonanza, ofreciendo a nuestros socios una gestión de patrimonio integral que ningún vehículo aislado puede igualar."
+    },
+    "call_to_action": {
+      "text": "CONOZCA CÓMO ESTAS DIVISIONES TRABAJAN PARA SU PATRIMONIO. Descargue nuestros reportes sectoriales o solicite una reunión con nuestros directores de área.",
+      "btn_download": "DESCARGAR REPORTE DE MERCADOS",
+      "btn_contact": "CONTACTAR DIVISIÓN CORPORATIVA"
+    }
+  }
+}

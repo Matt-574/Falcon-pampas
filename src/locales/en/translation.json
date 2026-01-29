@@ -1,0 +1,159 @@
+{
+  "navbar": {
+    "thesis": "Thesis",
+    "divisions": "Divisions",
+    "school": "School",
+    "investors": "Investors",
+    "home": "Home",
+    "request_invite": "Request Invitation"
+  },
+  "hero": {
+    "title": "NATIONAL CAPITAL. GLOBAL VISION.",
+    "subtitle": "We transform financial volatility into real productive assets. The definitive investment vehicle for the coming Argentina.",
+    "cta": "OUR INVESTMENT THESIS"
+  },
+  "principles": {
+    "title": "WE DON'T SPECULATE. WE BUILD.",
+    "body_1": "In a world obsessed with the next quarter, Falcón Pampas operates with the patience of decades. We are not a traditional hedge fund; we are an Operating Holding.",
+    "body_2": "We use the intelligence of financial markets and sovereign debt as an engine to acquire, empower, and operate the assets the world desperately needs: Food and Energy.",
+    "body_3": "We believe Argentina presents the largest value asymmetry in the Western Hemisphere today. While others see risk, we see the entry price to a productive powerhouse."
+  },
+  "ecosystem": {
+    "title": "OUR DUAL-STROKE ENGINE",
+    "step_1_title": "Liquidity Management (Nationalized)",
+    "step_1_desc": "The Fuel (Capital Markets): Through our Treasury and Nationalized division, we manage positions in sovereign and corporate debt to generate constant and predictable cash flow, protecting capital from inflation.",
+    "step_2_title": "Real Economy",
+    "step_2_desc": "The Structure (Real Economy): That flow is not paid out in ephemeral dividends; it is injected directly into the acquisition of strategic companies in Agribusiness, Vaca Muerta, and Real Estate.",
+    "result": "The Result: A cycle of compound interest where financial capital is armored with tangible assets."
+  },
+  "divisions": {
+    "title": "INVESTMENT DIVISIONS",
+    "card_1_title": "FIXED INCOME & MARKETS",
+    "card_1_desc": "Strategic management of Bonds, BOPREAL, and Bills. Liquidity and Hedging.",
+    "card_2_title": "AGRIBUSINESS",
+    "card_2_desc": "Processing, logistics, and export. Added value to the Argentine countryside.",
+    "card_3_title": "ENERGY & MINING",
+    "card_3_desc": "Critical infrastructure in Vaca Muerta and Lithium. Energy sovereignty.",
+    "card_4_title": "FALCÓN VENTURES",
+    "card_4_desc": "Seed capital for technological talent and national AgTech.",
+    "cta_explore": "Explore"
+  },
+  "authority": {
+    "title": "OUR VISION FOR THE NEXT 50 YEARS",
+    "quote": "\"The real risk is not market volatility, but the permanent loss of capital from not understanding what you own. At Falcón Pampas, we only invest in what we can touch, understand, and improve.\"",
+    "source": "— From the Founding Manifesto.",
+    "cta": "READ THE BOARD LETTER"
+  },
+  "school": {
+    "title": "A LEGACY OF EDUCATION",
+    "body": "We believe Argentina's recovery begins with the financial education of its citizens. That's why we opened our 'Financial Sovereignty School'. Access the same theses, analysis, and tools we use internally, completely free of charge.",
+    "cta": "ACCESS THE ACADEMY"
+  },
+  "footer": {
+    "slogan": "National Capital. Global Vision.",
+    "nav_about": "About Us",
+    "nav_thesis": "Investment Thesis",
+    "nav_press": "Press",
+    "nav_school": "Falcon School",
+    "address": "Headquarters: Puerto Madero, Buenos Aires",
+    "legal": "Falcón Pampas Holdings S.A. does not guarantee future returns. Investments in emerging markets carry risks. Read the full prospectus before investing. © 2024 Falcón Pampas. All rights reserved."
+  },
+  "thesis_page": {
+    "hero": {
+      "title": "THE ARBITRAGE OF A GENERATION",
+      "subtitle": "Why we believe Argentina offers the greatest asymmetry between Price and Value in the global market."
+    },
+    "premise": {
+      "title": "PRICE VS. VALUE",
+      "text_1": "Financial markets are usually efficient, except when fear clouds reason. In Argentina, the perception of risk has historically disconnected the price of assets from their real production capacity.",
+      "text_2": "At Falcón Pampas, we don't look at country risk on a Bloomberg screen; we look at the geology of Vaca Muerta, the photosynthesis of the humid pampas, and the talent of our engineers.",
+      "text_3": "Our thesis is simple: We buy irreproducible assets at liquidation prices, financed by the debt market's own inefficiency."
+    },
+    "model": {
+      "title": "FINANCIAL ENGINEERING AT THE SERVICE OF THE REAL ECONOMY",
+      "col_1_title": "The Fuel (Fixed Income & Nationalized)",
+      "col_1_text": "Unlike traditional funds that seek quick capital gains by buying and selling stocks, we use sovereign and sub-sovereign debt (Nationalized Instruments, Provincial Bonds, BOPREAL) with a strategic purpose: Generate Cash Flow (Float). We take advantage of the current high yields of these instruments to create a robust and liquid treasury. We do not speculate with default; we manage the yield curve to finance ourselves at negative cost.",
+      "col_2_title": "The Destination (Private Equity)",
+      "col_2_text": "That generated liquidity does not stay in the financial system. It is used to acquire controlling stakes in companies that produce tangible goods: food, energy, and bricks. This allows us to buy companies without external debt, giving us the freedom to wait for their projects to mature without the pressure of banks."
+    },
+    "vectors": {
+      "v1_title": "FOOD SOVEREIGNTY (Agribusiness)",
+      "v1_text": "The Open-Air Factory. We don't just buy land. We invest in the value chain: from seed genetics to river logistics. The world demands proteins and Argentina is one of the few guarantors of global food security. We look for companies with competitive advantages in processing and export, transforming commodities into branded products.",
+      "v2_title": "ENERGY INDEPENDENCE (Vaca Muerta & Mining)",
+      "v2_text": "The Energy of the Future. Vaca Muerta is not a promise; it is a world-class geological reality. Falcón Pampas positions itself in the Midstream (transport and treatment) and in oil services. In addition, we look to the North: Lithium and Copper are the minerals of the energy transition, and we provide the patient capital that sustainable mining requires.",
+      "v3_title": "VALUE REFUGE (Real Estate Distressed)",
+      "v3_text": "Smart Bricks. The Argentine real estate market has suffered severe corrections, bringing the value per square meter to historic lows in dollars. We acquire \"Trophy\" assets —Class A corporate buildings, logistics centers, and strategic lands— that are impossible to replicate at current construction costs. We buy square meters, we wait for patrimonial revaluation."
+    },
+    "advantage": {
+      "quote": "\"Our advantage is not just analytical, it is temperamental. We have the ability to stand firm when the market panics, and the discipline not to buy when the market is euphoric. Compound interest is the eighth wonder of the world, but it only works if it is not interrupted.\""
+    },
+    "risk": {
+      "title": "RISK MANAGEMENT",
+      "p1_title": "Structural Diversification:",
+      "p1_text": "We don't put all our eggs in one basket. We balance Fixed Income (Bonds) with Equities (Stocks) and Real Assets (Properties).",
+      "p2_title": "Currency Hedging:",
+      "p2_text": "All our investment theses are designed to preserve value in hard currency (Dollar/Gold), regardless of local monetary policy.",
+      "p3_title": "Margin of Safety:",
+      "p3_text": "We only buy when the price is significantly lower than the conservatively calculated value. If there is no margin, there is no deal."
+    },
+    "closing": {
+      "title": "BE PART OF THE RECONSTRUCTION.",
+      "text": "Falcón Pampas is not for everyone. It is for those who understand that real wealth is built by accompanying the development of a nation. If you share our long-term vision and our rational faith in Argentina, we invite you to talk.",
+      "cta": "CONTACT INVESTOR RELATIONS"
+    }
+  },
+  "divisions_page": {
+    "hero": {
+      "title": "OPERATING ECOSYSTEM",
+      "subtitle": "Four specialized engines. A single strategic direction. We manage the full capital cycle: from financial liquidity to industrial production."
+    },
+    "intro": {
+      "text": "At Falcón Pampas, our divisions do not operate in isolated silos. They function as a living organism. Our Capital Markets desk generates the liquidity that our Private Equity division uses to acquire real assets. In turn, our Ventures division injects technology to optimize those assets, while our Public Equity portfolio gives us liquid exposure to market leaders."
+    },
+    "cap": {
+      "title": "FIXED INCOME & STRATEGIC TREASURY",
+      "subtitle": "The Liquidity Engine.",
+      "desc_1": "Our Capital Markets division is the starting point of the investment cycle. We specialize in arbitrage and strategic positioning in Argentine sovereign and sub-sovereign debt (Nationalized).",
+      "desc_2": "We do not operate looking for the daily trade, but for structural cash flow. We take advantage of yield curve distortions to generate constant hard currency Cash Flow (Float), which serves as fuel for our real economy investments.",
+      "points": {
+        "p1": "Sovereign and Provincial Debt: Fiscal solvency analysis of strategic provinces (Mendoza, Córdoba, Neuquén) and Nation.",
+        "p2": "Regularization Instruments (BOPREAL): Hedging strategies for importers and liability management.",
+        "p3": "Corporate Financing: Structuring of Negotiable Obligations (ONs) for top-tier companies."
+      }
+    },
+    "real": {
+      "title": "REAL ECONOMY & CONTROL",
+      "subtitle": "Patrimonial Strength.",
+      "desc": "Here we transform financial capital into tangible and irreproducible assets. This division acquires majority or controlling stakes in companies with durable competitive advantages (Moats) and proven management. Our philosophy is of permanent owners: we buy to operate, optimize, and grow for decades.",
+      "sectors": {
+        "s1_title": "Integrated Agribusiness:",
+        "s1_text": "Not just land. We invest in the transformation chain: storage plants, seed companies, and river logistics. We convert grains into added value.",
+        "s2_title": "Energy & Infrastructure (Vaca Muerta):",
+        "s2_text": "Participation in oil services companies (Midstream), gas transport, and sustainable mining projects (Lithium) that fuel the global energy transition.",
+        "s3_title": "Real Estate Distressed:",
+        "s3_text": "Acquisition of premium real estate assets (AAA Offices, Logistics Centers) at historically low replacement values."
+      }
+    },
+    "equity": {
+      "title": "PUBLIC EQUITY & MARKET VALUE",
+      "subtitle": "Institutional Participation.",
+      "desc_1": "Through the \"Argentine Value Fund\", we take strategic minority positions in the country's most important public companies (Banks, Utilities, Telecommunications).",
+      "desc_2": "We apply rigorous fundamental analysis to identify massive discrepancies between the share price and the intrinsic value of the business. We act as active institutional shareholders, promoting corporate governance and long-term value creation."
+    },
+    "tech": {
+      "title": "VENTURE CAPITAL & TECHNOLOGY",
+      "subtitle": "Accelerating the Future.",
+      "desc_1": "Argentina exports nuclear reactors and software unicorns. Falcón Ventures is our venture capital arm, focused on startups that solve structural economic problems.",
+      "desc_2": "We seek synergy: We invest in AgTech (technology for agriculture) and FinTech that can be immediately used by our Private Equity Division companies, creating a technological feedback ecosystem."
+    },
+    "synergy": {
+      "title": "THE MULTIPLIER EFFECT",
+      "text": "The true power of Falcón Pampas lies in the intersection of its divisions. We have the unique ability to move capital instantly from a liquid financial instrument to a 10-year infrastructure project. This flexibility allows us to be defensive in times of crisis and aggressive in times of prosperity, offering our partners comprehensive wealth management that no isolated vehicle can match."
+    },
+    "call_to_action": {
+      "text": "LEARN HOW THESE DIVISIONS WORK FOR YOUR WEALTH. Download our sector reports or request a meeting with our area directors.",
+      "btn_download": "DOWNLOAD MARKET REPORT",
+      "btn_contact": "CONTACT CORPORATE DIVISION"
+    }
+  }
+}
