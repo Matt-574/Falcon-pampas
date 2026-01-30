@@ -1,7 +1,17 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { motion } from 'framer-motion';
+import { Link } from 'react-router-dom';
+import InvestmentModal from './InvestmentModal';
 
 const HeroSection: React.FC = () => {
+  const [isModalOpen, setIsModalOpen] = useState(false);
+
+  const scrollToIdentity = () => {
+    const section = document.getElementById('identity-section');
+    if (section) {
+      section.scrollIntoView({ behavior: 'smooth' });
+    }
+  };
 
   return (
     <section id="hero" style={{ 
@@ -103,6 +113,7 @@ const HeroSection: React.FC = () => {
 
         <div style={{ display: 'flex', gap: '1.5rem', flexWrap: 'wrap', justifyContent: 'center' }}>
           <motion.button
+            onClick={() => setIsModalOpen(true)}
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             whileHover={{ backgroundColor: 'var(--color-white)', color: 'var(--color-navy-deep)' }}
@@ -123,48 +134,57 @@ const HeroSection: React.FC = () => {
             DESCUBRE CÓMO INVERTIR
           </motion.button>
 
-          <motion.button
-             initial={{ opacity: 0, y: 20 }}
-             animate={{ opacity: 1, y: 0 }}
-             whileHover={{ backgroundColor: 'rgba(255,255,255,0.1)' }}
-             whileTap={{ scale: 0.95 }}
-             transition={{ duration: 0.3, delay: 0.9 }}
-             style={{
-               backgroundColor: 'transparent',
-               color: 'var(--color-white)',
-               border: '1px solid var(--color-white)',
-               padding: '1rem 2.5rem',
-               fontSize: '1rem',
-               fontWeight: 600,
-               cursor: 'pointer',
-               transition: 'var(--transition-smooth)',
-               fontFamily: 'var(--font-mono)'
-             }}
-          >
-            NUESTRA TESIS
-          </motion.button>
+          <Link to="/tesis">
+            <motion.button
+               initial={{ opacity: 0, y: 20 }}
+               animate={{ opacity: 1, y: 0 }}
+               whileHover={{ backgroundColor: 'rgba(255,255,255,0.1)' }}
+               whileTap={{ scale: 0.95 }}
+               transition={{ duration: 0.3, delay: 0.9 }}
+               style={{
+                 backgroundColor: 'transparent',
+                 color: 'var(--color-white)',
+                 border: '1px solid var(--color-white)',
+                 padding: '1rem 2.5rem',
+                 fontSize: '1rem',
+                 fontWeight: 600,
+                 cursor: 'pointer',
+                 transition: 'var(--transition-smooth)',
+                 fontFamily: 'var(--font-mono)'
+               }}
+            >
+               NUESTRA TESIS
+            </motion.button>
+          </Link>
         </div>
       </div>
 
       {/* Scroll Indicator */}
       <motion.div
+        onClick={scrollToIdentity}
         animate={{ y: [0, 10, 0] }}
         transition={{ repeat: Infinity, duration: 2 }}
         style={{
           position: 'absolute',
           bottom: '2rem',
           left: '50%',
-          transform: 'translateX(-50%)',
+          transform: 'translateX(-50%)', // Keeps it strictly centered
           color: 'var(--color-white)',
           opacity: 0.7,
-          cursor: 'pointer'
+          cursor: 'pointer',
+          textAlign: 'center', // Ensures text inside is centered
+          width: 'max-content' // Prevents full-width blocks potentially skewing layout
         }}
       >
         <span style={{ fontSize: '0.8rem', fontFamily: 'var(--font-mono)', marginBottom: '0.5rem', display: 'block' }}>Scroll para explorar</span>
-        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" style={{ margin: '0 auto', display: 'block' }}>
           <path d="M7 13l5 5 5-5M7 6l5 5 5-5"/>
         </svg>
       </motion.div>
+
+      {/* Investment Modal */}
+      <InvestmentModal isOpen={isModalOpen} onClose={() => setIsModalOpen(false)} />
+
     </section>
   );
 };

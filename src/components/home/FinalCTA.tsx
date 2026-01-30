@@ -6,7 +6,9 @@ const FinalCTA: React.FC = () => {
   return (
     <section style={{ 
       padding: '8rem 2rem', 
-      background: 'linear-gradient(135deg, var(--color-navy-deep) 0%, #0a1120 100%)', 
+      background: 'linear-gradient(135deg, rgba(10, 17, 32, 0.9) 0%, rgba(10, 17, 32, 0.8) 100%), url("/images/rebuild-argentina-bg.jpg")',
+      backgroundSize: 'cover',
+      backgroundPosition: 'center',
       textAlign: 'center',
       position: 'relative',
       overflow: 'hidden'

@@ -22,17 +22,17 @@ const SchoolPurpose: React.FC = () => {
             </div>
         </div>
 
-        {/* Visual: CEO/Map B&W */}
+        {/* Visual: Image moved from Hero */}
         <motion.div 
             initial={{ opacity: 0, x: 50 }}
             whileInView={{ opacity: 1, x: 0 }}
             transition={{ duration: 0.8 }}
-            style={{ position: 'relative' }}
+            style={{ position: 'relative', height: '100%', minHeight: '400px', borderRadius: '4px', overflow: 'hidden' }}
         >
             <img 
-                src="https://images.unsplash.com/photo-1556761175-5973dc0f32e7?ixlib=rb-4.0.3&auto=format&fit=crop&w=1000&q=80" 
-                alt="Leadership" 
-                style={{ width: '100%', filter: 'grayscale(100%) contrast(1.1)', borderRadius: '2px' }}
+                src="https://images.unsplash.com/photo-1454165804606-c3d57bc86b40?ixlib=rb-4.0.3&auto=format&fit=crop&w=2070&q=80" 
+                alt="School Purpose" 
+                style={{ width: '100%', height: '100%', objectFit: 'cover', filter: 'grayscale(100%) contrast(1.1)' }}
             />
         </motion.div>
 

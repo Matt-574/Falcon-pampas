@@ -1,8 +1,11 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { motion } from 'framer-motion';
-import { Smartphone, Globe, Building } from 'lucide-react';
+import { Smartphone, Globe, Building, CheckCircle2 } from 'lucide-react';
+import Modal from '../common/Modal';
 
 const InvestorTypesSection: React.FC = () => {
+  const [activeModal, setActiveModal] = useState<string | null>(null);
+
   const types = [
     {
       id: "retail",
@@ -13,7 +16,17 @@ const InvestorTypesSection: React.FC = () => {
       ticket: "$50 - $500 / mes",
       description: "Acceso democrático a inversiones de calibre institucional desde tu celular.",
       features: ["Micro-inversión", "Liquidez inmediata", "Cero comisiones ocultas"],
-      dark: false
+      dark: false,
+      details: {
+        title: "Falcon App - Inversión Retail",
+        longDesc: "La democratización de las inversiones de alto calibre. Nuestra plataforma móvil permitirá a cualquier persona acceder a participaciones fraccionadas en proyectos de Real Estate Premium, Agroindustria Exportadora y Startups Tecnológicas, activos que históricamente estuvieron reservados para grandes capitales.",
+        benefits: [
+          "Ticket de entrada accesible desde $50.",
+          "Mercado secundario para liquidez inmediata.",
+          "Diversificación automática en múltiples activos.",
+          "Gestión 100% digital desde la App."
+        ]
+      }
     },
     {
       id: "cbi",
@@ -24,7 +37,17 @@ const InvestorTypesSection: React.FC = () => {
       ticket: "$550,000 USD",
       description: "Obtenga la residencia y ciudadanía argentina invirtiendo en sectores estratégicos.",
       features: ["Pasaporte Argentino", "Beneficios fiscales", "Concierge Service"],
-      dark: true // Highlighted styling
+      dark: true,
+      details: {
+        title: "Ciudadanía por Inversión (CBI)",
+        longDesc: "Un programa exclusivo diseñado para inversores internacionales que buscan obtener residencia legal y ciudadanía argentina mediante inversiones estratégicas en la economía real del país. Facilitamos todo el proceso legal y migratorio mientras su capital trabaja en sectores productivos de alto rendimiento.",
+        benefits: [
+          "Tramitación acelerada de Residencia y Ciudadanía.",
+          "Pasaporte Mercosur con acceso global.",
+          "Planificación fiscal internacional eficiente.",
+          "Servicio de Concierge VIP para relocation y lifestyle."
+        ]
+      }
     },
     {
       id: "institutional",
@@ -34,9 +57,21 @@ const InvestorTypesSection: React.FC = () => {
       ticket: "$500k+ USD",
       description: "Vehículos estructurados a medida para preservación y multiplicación de patrimonio.",
       features: ["Co-inversión directa", "Reportes trimestrales", "Estructuración legal"],
-      dark: false
+      dark: false,
+      details: {
+        title: "Soluciones Institucionales",
+        longDesc: "Vehículos de inversión hechos a medida para Family Offices, Fondos de Cobertura e Inversores Calificados que buscan exposición a activos alternativos en LATAM con estándares globales de cumplimiento y reporting.",
+        benefits: [
+          "Oportunidades de Co-inversión directa (Deal-by-deal).",
+          "Sin fees de gestión en estructuras específicas.",
+          "Reportes trimestrales bajo estándares ILPA.",
+          "Estructuras legales robustas (Fideicomisos, SPVs locales y offshore)."
+        ]
+      }
     }
   ];
+
+  const activeContent = types.find(t => t.id === activeModal)?.details;
 
   return (
     <section style={{ padding: '6rem 2rem', backgroundColor: 'var(--color-white)' }}>
@@ -112,23 +147,60 @@ const InvestorTypesSection: React.FC = () => {
                 ))}
               </ul>
 
-              <button style={{
-                marginTop: '2rem',
-                width: '100%',
-                padding: '1rem',
-                backgroundColor: 'transparent',
-                border: `1px solid ${type.dark ? 'var(--color-white)' : 'var(--color-navy-deep)'}`,
-                color: type.dark ? 'var(--color-white)' : 'var(--color-navy-deep)',
-                fontWeight: 600,
-                cursor: 'pointer',
-                transition: 'all 0.3s'
-              }}>
+              <button 
+                onClick={() => setActiveModal(type.id)}
+                style={{
+                  marginTop: '2rem',
+                  width: '100%',
+                  padding: '1rem',
+                  backgroundColor: 'transparent',
+                  border: `1px solid ${type.dark ? 'var(--color-white)' : 'var(--color-navy-deep)'}`,
+                  color: type.dark ? 'var(--color-white)' : 'var(--color-navy-deep)',
+                  fontWeight: 600,
+                  cursor: 'pointer',
+                  transition: 'all 0.3s'
+                }}
+              >
                 MÁS INFORMACIÓN
               </button>
 
             </motion.div>
           ))}
         </div>
+
+        {/* Detail Modal */}
+        <Modal 
+          isOpen={!!activeModal} 
+          onClose={() => setActiveModal(null)}
+          title={activeContent?.title}
+        >
+          {activeContent && (
+            <div>
+              <p style={{ fontSize: '1.1rem', marginBottom: '2rem', color: '#475569' }}>
+                {activeContent.longDesc}
+              </p>
+              
+              <h4 style={{ fontSize: '1rem', fontWeight: 700, marginBottom: '1rem', color: '#1E293B', textTransform: 'uppercase', letterSpacing: '1px' }}>
+                Beneficios Clave
+              </h4>
+              
+              <ul style={{ listStyle: 'none', padding: 0 }}>
+                {activeContent.benefits.map((benefit, i) => (
+                  <li key={i} style={{ marginBottom: '1rem', display: 'flex', alignItems: 'flex-start', gap: '0.75rem' }}>
+                    <CheckCircle2 size={20} color="var(--color-gold-imperial)" style={{ flexShrink: 0, marginTop: '2px' }} />
+                    <span style={{ color: '#334155' }}>{benefit}</span>
+                  </li>
+                ))}
+              </ul>
+
+              <div style={{ marginTop: '2.5rem', padding: '1.5rem', backgroundColor: '#F8FAFC', borderRadius: '8px', borderLeft: '4px solid var(--color-gold-imperial)' }}>
+                <p style={{ margin: 0, fontSize: '0.9rem', color: '#64748B', fontStyle: 'italic' }}>
+                  Para más información detallada sobre este programa, por favor contacte a nuestro equipo de Relaciones con Inversores.
+                </p>
+              </div>
+            </div>
+          )}
+        </Modal>
 
       </div>
     </section>

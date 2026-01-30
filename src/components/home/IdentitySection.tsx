@@ -27,7 +27,7 @@ const IdentitySection: React.FC = () => {
   ];
 
   return (
-    <section style={{ 
+    <section id="identity-section" style={{ 
       backgroundColor: 'var(--color-white)', 
       padding: '6rem 2rem',
       overflow: 'hidden'
@@ -134,50 +134,16 @@ const IdentitySection: React.FC = () => {
              backgroundColor: 'var(--color-navy-deep)' // Fallback
            }}
         >
-          {/* Conceptual Image Composition */}
-          {/* Background Layer: Dark Navy Gradient */}
-          <div style={{
-            position: 'absolute',
-            inset: 0,
-            background: 'linear-gradient(135deg, var(--color-navy-deep) 0%, #0a1120 100%)',
-            zIndex: 1
-          }} />
-          
-          {/* Abstract Elements identifying 'Triangle Falcon' - Wheat, Oil, Tech */}
-          <div style={{
-            position: 'absolute',
-            top: '50%',
-            left: '50%',
-            transform: 'translate(-50%, -50%)',
-            width: '80%',
-            height: '80%',
-            zIndex: 2,
-            border: '1px solid rgba(184, 134, 11, 0.3)',
-            display: 'flex',
-            alignItems: 'center',
-            justifyContent: 'center'
-          }}>
-             <span style={{ color: 'var(--color-gold-imperial)', opacity: 0.5, letterSpacing: '4px' }}>FALCON PAMPAS</span>
-          </div>
-
-          <div style={{
-             position: 'absolute',
-             bottom: 0,
-             left: 0,
-             right: 0,
-             height: '40%',
-             background: 'linear-gradient(to top, var(--color-navy-deep) 0%, transparent 100%)',
-             zIndex: 3
-          }} />
-
-          {/* This would be the "Photo Editorial" - using a placeholder pattern for now */}
-          <div style={{
-            position: 'absolute',
-            inset: 0,
-            opacity: 0.4,
-            backgroundImage: 'radial-gradient(circle at 20% 80%, rgba(184, 134, 11, 0.4) 0%, transparent 40%), radial-gradient(circle at 80% 20%, rgba(74, 85, 104, 0.4) 0%, transparent 40%)',
-            zIndex: 1
-          }} />
+          <img 
+            src="/images/about-falcon.jpg" 
+            alt="Falcon Pampas Construction Site" 
+            style={{
+              width: '100%',
+              height: '100%',
+              objectFit: 'cover',
+              display: 'block'
+            }}
+          />
         </motion.div>
 
       </div>

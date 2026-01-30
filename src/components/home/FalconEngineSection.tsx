@@ -44,17 +44,17 @@ const FalconEngineSection: React.FC = () => {
   ];
 
   return (
-    <section style={{ padding: '6rem 2rem', backgroundColor: 'var(--color-navy-deep)', overflow: 'hidden' }}>
+    <section style={{ padding: '6rem 2rem', backgroundColor: 'var(--color-white)', overflow: 'hidden' }}>
       <div style={{ maxWidth: '1000px', margin: '0 auto', textAlign: 'center' }}>
         
         <div style={{ marginBottom: '4rem' }}>
-          <h2 style={{ fontSize: '2.5rem', fontFamily: 'var(--font-primary)', color: 'var(--color-white)' }}>
+          <h2 style={{ fontSize: '2.5rem', fontFamily: 'var(--font-primary)', color: 'var(--color-navy-deep)' }}>
             El Motor Falcon
           </h2>
-          <p style={{ color: 'rgba(255,255,255,0.6)' }}>Cómo nuestro ecosistema genera valor continuo.</p>
+          <p style={{ color: 'var(--color-gray-slate)' }}>Cómo nuestro ecosistema genera valor continuo.</p>
         </div>
 
-        <div style={{ position: 'relative', height: '600px', backgroundColor: 'rgba(255,255,255,0.02)', borderRadius: '20px' }}>
+        <div style={{ position: 'relative', height: '600px', backgroundColor: 'rgba(12, 29, 54, 0.03)', borderRadius: '20px' }}>
           
           {/* Connecting Lines (Simplified for CSS) */}
           <svg style={{ position: 'absolute', top: 0, left: 0, width: '100%', height: '100%', pointerEvents: 'none' }}>
@@ -116,11 +116,11 @@ const FalconEngineSection: React.FC = () => {
                 marginTop: '1rem',
                 pointerEvents: 'none' 
               }}>
-                <h3 style={{ fontSize: '1rem', color: 'var(--color-white)', fontWeight: 600 }}>{node.title}</h3>
+                <h3 style={{ fontSize: '1rem', color: 'var(--color-navy-deep)', fontWeight: 600 }}>{node.title}</h3>
                 <motion.p 
                   initial={{ opacity: 0, height: 0 }}
                   animate={{ opacity: activeNode === node.id ? 1 : 0, height: activeNode === node.id ? 'auto' : 0 }}
-                  style={{ fontSize: '0.8rem', color: 'rgba(255,255,255,0.7)', overflow: 'hidden' }}
+                  style={{ fontSize: '0.8rem', color: 'var(--color-gray-slate)', overflow: 'hidden' }}
                 >
                   {node.description}
                 </motion.p>

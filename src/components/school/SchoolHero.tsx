@@ -13,22 +13,32 @@ const SchoolHero: React.FC = () => {
       alignItems: 'center', 
       justifyContent: 'center',
       overflow: 'hidden',
+      backgroundColor: 'var(--color-navy-deep)', // Solid blue background
       color: 'var(--color-white-ivory)'
     }}>
-      {/* Video Placeholder - Cinematic/Human */}
-      <div style={{
-        position: 'absolute',
-        top: 0,
-        left: 0,
-        width: '100%',
-        height: '100%',
-        zIndex: 0
-      }}>
-        <img 
-            src="https://images.unsplash.com/photo-1454165804606-c3d57bc86b40?ixlib=rb-4.0.3&auto=format&fit=crop&w=2070&q=80" 
-            alt="Study" 
-            style={{ width: '100%', height: '100%', objectFit: 'cover', filter: 'brightness(0.4) desaturate(0.3)' }}
-        />
+      
+      {/* Decorative Gold Curve Animation */}
+      <div style={{ position: 'absolute', top: 0, left: 0, width: '100%', height: '100%', zIndex: 0, opacity: 0.3 }}>
+        <svg width="100%" height="100%" viewBox="0 0 1440 800" fill="none" preserveAspectRatio="none">
+          <motion.path
+            d="M-100,600 C300,400 600,800 1500,200"
+            stroke="var(--color-gold-imperial)"
+            strokeWidth="2"
+            fill="none"
+            initial={{ pathLength: 0, opacity: 0 }}
+            animate={{ pathLength: 1, opacity: 1 }}
+            transition={{ duration: 2.5, ease: "easeInOut" }}
+          />
+           <motion.path
+            d="M-100,700 C400,500 800,900 1500,300"
+            stroke="var(--color-gold-imperial)"
+            strokeWidth="1"
+            fill="none"
+            initial={{ pathLength: 0, opacity: 0 }}
+            animate={{ pathLength: 1, opacity: 1 }}
+            transition={{ duration: 3, ease: "easeInOut", delay: 0.5 }}
+          />
+        </svg>
       </div>
       
       <div style={{ position: 'relative', zIndex: 1, textAlign: 'center', maxWidth: '800px', padding: '0 2rem' }}>

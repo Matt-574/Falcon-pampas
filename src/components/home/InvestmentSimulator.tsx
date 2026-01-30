@@ -9,15 +9,14 @@ const InvestmentSimulator: React.FC = () => {
   const [years, setYears] = useState<number>(5);
   const [riskProfile, setRiskProfile] = useState<'conservative' | 'balanced' | 'aggressive'>('balanced');
 
-  // Update default amounts based on type
-  useEffect(() => {
-    switch (investorType) {
-      case 'retail': setAmount(5000); break; // Low entry
-      case 'cbi': setAmount(550000); break; // Fixed for Citizenship
-      case 'institutional': setAmount(1000000); break;
-    }
-  }, [investorType]);
-
+  const handleTypeChange = (type: 'retail' | 'cbi' | 'institutional') => {
+      setInvestorType(type);
+      switch (type) {
+        case 'retail': setAmount(5000); break;
+        case 'cbi': setAmount(550000); break;
+        case 'institutional': setAmount(1000000); break;
+      }
+  };
 
   // Calculation Logic
   const data = useMemo(() => {
@@ -42,6 +41,7 @@ const InvestmentSimulator: React.FC = () => {
     const treasuryRate = RATES.treasury;
     const startupRate = RATES.startups[riskProfile];
 
+    // ... calculation ...
     let currentTreasury = amount * t;
     let currentStartups = amount * s;
 
@@ -104,7 +104,7 @@ const InvestmentSimulator: React.FC = () => {
                 ].map((type) => (
                   <button
                     key={type.id}
-                    onClick={() => setInvestorType(type.id as 'retail' | 'cbi' | 'institutional')}
+                    onClick={() => handleTypeChange(type.id as 'retail' | 'cbi' | 'institutional')}
                     style={{
                       flex: 1,
                       padding: '0.8rem',

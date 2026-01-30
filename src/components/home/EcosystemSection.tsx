@@ -1,8 +1,10 @@
 import React from 'react';
 import { motion } from 'framer-motion';
 import { Rocket, BarChart3, Factory, Palette, Code2, TrendingUp, ArrowRight } from 'lucide-react';
+import { useNavigate } from 'react-router-dom';
 
 const EcosystemSection: React.FC = () => {
+  const navigate = useNavigate();
   const divisions = [
     {
       id: 'ventures',
@@ -82,7 +84,8 @@ const EcosystemSection: React.FC = () => {
                 overflow: 'hidden',
                 transition: 'all 0.3s ease'
               }}
-              className="group" // Using group class for potential Tailwind utility usage if hybrid, but relying on inline interaction mostly
+              className="group"
+              onClick={() => navigate(`/divisiones?tab=${div.id}`)}
             >
               {/* Hover Border Effect (Gold) */}
               <div style={{

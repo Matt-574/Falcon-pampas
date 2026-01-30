@@ -55,9 +55,12 @@ const Navbar: React.FC = () => {
 
       <div style={{ display: 'flex', alignItems: 'center', gap: '2rem' }}>
         <ul style={{ display: 'flex', listStyle: 'none', gap: '2rem', alignItems: 'center', margin: 0, padding: 0 }}>
-          <li><Link to="/tesis" style={{ color: 'var(--color-white-ivory)', textTransform: 'uppercase', fontSize: '0.8rem', letterSpacing: '1px', fontWeight: 500 }}>{t('navbar.thesis')}</Link></li>
-          <li><Link to="/divisiones" style={{ color: 'var(--color-white-ivory)', textTransform: 'uppercase', fontSize: '0.8rem', letterSpacing: '1px', fontWeight: 500 }}>{t('navbar.divisions')}</Link></li>
-          <li><Link to="/escuela" style={{ color: 'var(--color-white-ivory)', textTransform: 'uppercase', fontSize: '0.8rem', letterSpacing: '1px', fontWeight: 500 }}>{t('navbar.school')}</Link></li>
+          <li><Link to="/tesis" style={{ color: 'var(--color-gold-imperial)', textTransform: 'uppercase', fontSize: '0.8rem', letterSpacing: '1px', fontWeight: 700 }}>{t('navbar.thesis')}</Link></li>
+          <li><Link to="/divisiones" style={{ color: 'var(--color-gold-imperial)', textTransform: 'uppercase', fontSize: '0.8rem', letterSpacing: '1px', fontWeight: 700 }}>{t('navbar.divisions')}</Link></li>
+          <li><Link to="/escuela" style={{ color: 'var(--color-gold-imperial)', textTransform: 'uppercase', fontSize: '0.8rem', letterSpacing: '1px', fontWeight: 700 }}>{t('navbar.school')}</Link></li>
+          <li><Link to="/cbi" style={{ color: 'var(--color-gold-imperial)', textTransform: 'uppercase', fontSize: '0.8rem', letterSpacing: '1px', fontWeight: 700 }}>CBI</Link></li>
+          <li><Link to="/portafolio" style={{ color: 'var(--color-gold-imperial)', textTransform: 'uppercase', fontSize: '0.8rem', letterSpacing: '1px', fontWeight: 700 }}>NUESTRAS STARTUPS</Link></li>
+          <li><Link to="/startups" style={{ color: 'var(--color-gold-imperial)', textTransform: 'uppercase', fontSize: '0.8rem', letterSpacing: '1px', fontWeight: 700 }}>APLICA A FALCON VENTURES</Link></li>
           
           <li>
               <Link to="/investor-relations" style={{ 

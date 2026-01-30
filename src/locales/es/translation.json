@@ -155,5 +155,28 @@
       "btn_download": "DESCARGAR REPORTE DE MERCADOS",
       "btn_contact": "CONTACTAR DIVISIÓN CORPORATIVA"
     }
+  },
+  "school_page": {
+    "hero": {
+      "title": "ESCUELA DE SOBERANÍA FINANCIERA",
+      "subtitle": "Formación de elite para inversores sofisticados. Desbloquea el conocimiento que los grandes capitales utilizan para construir legado.",
+      "cta": "EXPLORAR CURRICULUM"
+    },
+    "purpose": {
+      "title": "EL PROPÓSITO",
+      "text_1": "En un mundo de ruido informativo, la claridad es el activo más valioso. Nuestra misión es democratizar el acceso a la inteligencia financiera institucional.",
+      "text_2": "\"No damos consejos de inversión; enseñamos a pensar como un inversor.\""
+    },
+    "curriculum": {
+      "p1_title": "DEFENSA PATRIMONIAL",
+      "p1_desc": "Aprenda a proteger su capital de la inflación y la devaluación sistémica.",
+      "p1_class": "Clase Maestra: Hard Money vs. Fiat",
+      "p2_title": "ANÁLISIS DE MERCADOS",
+      "p2_desc": "Entienda la estructura del mercado, ciclos de liquidez y lectura de tendencias.",
+      "p2_class": "Curso: Ciclos Económicos",
+      "p3_title": "VALUACIÓN DE ACTIVOS",
+      "p3_desc": "Distinga entre Precio y Valor. Metodologías de Private Equity aplicadas.",
+      "p3_class": "Taller: Buscando Asimetrías"
+    }
   }
 }

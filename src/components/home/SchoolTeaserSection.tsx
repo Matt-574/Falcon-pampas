@@ -16,7 +16,7 @@ const SchoolTeaserSection: React.FC = () => {
          position: 'absolute',
          inset: 0,
          opacity: 0.3,
-         background: 'linear-gradient(to right, #000 0%, transparent 100%), url("/school-bg.jpg")', // Placeholder URL
+         background: 'linear-gradient(to right, #000 0%, transparent 100%), url("/images/school-bg-new.jpg")', 
          backgroundSize: 'cover',
          backgroundPosition: 'center'
       }} />

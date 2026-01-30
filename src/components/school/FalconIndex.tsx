@@ -1,53 +1,45 @@
 import React from 'react';
-import { useTranslation } from 'react-i18next';
 
 const FalconIndex: React.FC = () => {
-  const { t } = useTranslation();
+    const indicators = [
+        { label: "Salarios para comprar 1m² en CABA", value: "185 salarios", context: "-32% (Barato)", diffColor: "#48BB78" },
+        { label: "Hectáreas de campo por $1M USD", value: "420 ha", context: "+45% (Caro hist.)", diffColor: "#F56565" },
+        { label: "Barriles de petróleo por sueldo min.", value: "2.3 barriles", context: "+12% (Normal)", diffColor: "#ECC94B" },
+        { label: "iPhones por tonelada de soja", value: "8.5 iPhones", context: "-18% (Soja barata)", diffColor: "#48BB78" }
+    ];
 
   return (
-    <section style={{ padding: '6rem 2rem', backgroundColor: '#f4f4f4', color: '#333', textAlign: 'center' }}>
-      <div style={{ maxWidth: '800px', margin: '0 auto' }}>
-        <h2 style={{ fontSize: '2.5rem', marginBottom: '1.5rem', color: 'var(--color-blue-deep)' }}>{t('school_page.index.title')}</h2>
-        <p style={{ fontSize: '1.1rem', lineHeight: 1.6, marginBottom: '3rem' }}>{t('school_page.index.text')}</p>
-
-        {/* Mock Widget */}
-        <div style={{ 
-            backgroundColor: '#fff', 
-            padding: '2rem', 
-            borderRadius: '8px', 
-            boxShadow: '0 10px 30px rgba(0,0,0,0.1)',
-            marginBottom: '3rem',
-            textAlign: 'left'
-        }}>
-            <div style={{ display: 'flex', justifyContent: 'space-between', borderBottom: '1px solid #eee', paddingBottom: '1rem', marginBottom: '1rem' }}>
-                <span style={{ fontWeight: 700, color: '#666' }}>INDEX ITEM</span>
-                <span style={{ fontWeight: 700, color: '#666' }}>VALUE (REAL)</span>
-            </div>
-            <div style={{ display: 'flex', justifyContent: 'space-between', marginBottom: '1rem' }}>
-                <span>1 m² Office (CABA)</span>
-                <span style={{ color: 'green', fontWeight: 600 }}>4.2 Salaries</span>
-            </div>
-             <div style={{ display: 'flex', justifyContent: 'space-between', marginBottom: '1rem' }}>
-                <span>1 Ton Soy</span>
-                <span style={{ color: 'var(--color-gold-imperial)', fontWeight: 600 }}>0.8 iPhones</span>
-            </div>
-             <div style={{ display: 'flex', justifyContent: 'space-between' }}>
-                <span>Argentina ETF (ARGT)</span>
-                <span style={{ color: 'blue', fontWeight: 600 }}>Undervalued (-35%)</span>
-            </div>
+    <section style={{ backgroundColor: '#1A2744', padding: '6rem 2rem', color: 'white' }}>
+      <div style={{ maxWidth: '1000px', margin: '0 auto' }}>
+        
+        <div style={{ textAlign: 'center', marginBottom: '4rem' }}>
+            <span style={{ color: 'var(--color-gold-imperial)', letterSpacing: '2px', fontWeight: 700 }}>HERRAMIENTA EXCLUSIVA</span>
+            <h2 style={{ fontSize: '3rem', fontFamily: 'var(--font-primary)', margin: '1rem 0' }}>El Índice Falcon</h2>
+            <p style={{ fontSize: '1.2rem', color: '#A0AEC0', maxWidth: '700px', margin: '0 auto' }}>
+                 El "Big Mac Index" de la economía argentina. Medimos el costo real de activos en términos tangibles a través del tiempo.
+            </p>
         </div>
 
-        <button style={{
-            padding: '1rem 2rem',
-            backgroundColor: 'var(--color-blue-deep)',
-            color: '#fff',
-            border: 'none',
-            borderRadius: '2px',
-            fontWeight: 700,
-            cursor: 'pointer'
-        }}>
-            {t('school_page.index.cta')}
-        </button>
+        <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(220px, 1fr))', gap: '2rem' }}>
+            {indicators.map((item, i) => (
+                <div key={i} style={{ backgroundColor: 'rgba(255,255,255,0.05)', padding: '2rem', borderRadius: '12px', border: '1px solid rgba(255,255,255,0.1)' }}>
+                    <p style={{ fontSize: '0.9rem', color: '#A0AEC0', marginBottom: '1rem', minHeight: '40px' }}>{item.label}</p>
+                    <div style={{ fontSize: '2rem', fontWeight: 700, marginBottom: '0.5rem', fontFamily: 'var(--font-mono)' }}>{item.value}</div>
+                    <div style={{ color: item.diffColor, fontSize: '0.9rem', fontWeight: 600 }}>{item.context}</div>
+                </div>
+            ))}
+        </div>
+        
+        <div style={{ textAlign: 'center', marginTop: '3rem' }}>
+            <button style={{ 
+                backgroundColor: 'transparent', border: '1px solid var(--color-gold-imperial)', 
+                color: 'var(--color-gold-imperial)', padding: '0.8rem 2rem', borderRadius: '4px',
+                cursor: 'pointer', fontWeight: 600
+            }}>
+                VER GRÁFICOS HISTÓRICOS
+            </button>
+        </div>
+
       </div>
     </section>
   );

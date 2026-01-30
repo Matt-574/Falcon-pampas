@@ -3,20 +3,24 @@ import SchoolHero from '../components/school/SchoolHero';
 import SchoolPurpose from '../components/school/SchoolPurpose';
 import SchoolCurriculum from '../components/school/SchoolCurriculum';
 import FalconIndex from '../components/school/FalconIndex';
+import SchoolMasterclass from '../components/school/SchoolMasterclass';
 import ScholarshipProgram from '../components/school/ScholarshipProgram';
 import SchoolCommunity from '../components/school/SchoolCommunity';
 import SchoolNewsletter from '../components/school/SchoolNewsletter';
+import FinalCTA from '../components/home/FinalCTA';
 
 const School: React.FC = () => {
   return (
-    <div>
+    <div style={{ paddingTop: '140px' }}>
       <SchoolHero />
       <SchoolPurpose />
-      <SchoolCurriculum />
       <FalconIndex />
+      <SchoolMasterclass />
+      <SchoolCurriculum />
       <ScholarshipProgram />
       <SchoolCommunity />
       <SchoolNewsletter />
+      <FinalCTA />
     </div>
   );
 };

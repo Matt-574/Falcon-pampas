@@ -155,5 +155,28 @@
       "btn_download": "DOWNLOAD MARKET REPORT",
       "btn_contact": "CONTACT CORPORATE DIVISION"
     }
+  },
+  "school_page": {
+    "hero": {
+      "title": "SCHOOL OF FINANCIAL SOVEREIGNTY",
+      "subtitle": "Elite training for sophisticated investors. Unlock the knowledge that big capital uses to build legacy.",
+      "cta": "EXPLORE CURRICULUM"
+    },
+    "purpose": {
+      "title": "THE PURPOSE",
+      "text_1": "In a world of information noise, clarity is the most valuable asset. Our mission is to democratize access to institutional financial intelligence.",
+      "text_2": "\"We don't give investment advice; we teach you to think like an investor.\""
+    },
+    "curriculum": {
+      "p1_title": "WEALTH DEFENSE",
+      "p1_desc": "Learn to protect your capital from inflation and systemic devaluation.",
+      "p1_class": "Masterclass: Hard Money vs. Fiat",
+      "p2_title": "MARKET ANALYSIS",
+      "p2_desc": "Understand market structure, liquidity cycles, and trend reading.",
+      "p2_class": "Course: Economic Cycles",
+      "p3_title": "ASSET VALUATION",
+      "p3_desc": "Distinguish between Price and Value. Private Equity methodologies applied.",
+      "p3_class": "Workshop: Seeking Asymmetries"
+    }
   }
 }
