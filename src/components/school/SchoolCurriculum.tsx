@@ -4,7 +4,9 @@ import { useTranslation } from 'react-i18next';
 import { Shield, CandlestickChart, Tractor, ChevronDown, BookOpen } from 'lucide-react';
 import { motion, AnimatePresence } from 'framer-motion';
 
+const SchoolCurriculum: React.FC = () => {
   useTranslation();
+  const navigate = useNavigate();
   const [activeModule, setActiveModule] = useState<number | null>(0);
 
   const pillars = [
