@@ -129,14 +129,16 @@ const IdentitySection: React.FC = () => {
            transition={{ duration: 0.8 }}
            style={{
              position: 'relative',
-             height: '600px',
+             width: '100%',
+             aspectRatio: '4/3',
              borderRadius: '8px',
              overflow: 'hidden',
-             backgroundColor: 'var(--color-navy-deep)' // Fallback
+             boxShadow: '0 20px 40px rgba(0,0,0,0.1)',
+             backgroundColor: 'var(--color-navy-deep)'
            }}
         >
           <img 
-            src="/images/about-falcon.jpg" 
+            src="/images/about-new.jpg" 
             alt="Falcon Pampas Construction Site" 
             style={{
               width: '100%',
@@ -145,6 +147,13 @@ const IdentitySection: React.FC = () => {
               display: 'block'
             }}
           />
+          {/* Blue overlay (no blur) */}
+          <div style={{
+            position: 'absolute',
+            inset: 0,
+            backgroundColor: 'rgba(26, 39, 68, 0.2)',
+            pointerEvents: 'none'
+          }} />
         </motion.div>
 
       </div>

@@ -161,30 +161,37 @@ const HeroSection: React.FC = () => {
       </div>
 
       {/* Scroll Indicator */}
-      <motion.div
-        onClick={scrollToIdentity}
-        animate={{ y: [0, 10, 0] }}
-        transition={{ repeat: Infinity, duration: 2 }}
+      {/* Scroll Indicator */}
+      <div
         style={{
           position: 'absolute',
           bottom: '2rem',
           left: '50%',
           transform: 'translateX(-50%)',
-          color: 'var(--color-white)',
-          opacity: 0.7,
-          cursor: 'pointer',
-          display: 'flex',
-          flexDirection: 'column',
-          alignItems: 'center',
-          gap: '0.5rem',
-          width: 'max-content'
+          width: 'max-content',
+          zIndex: 10
         }}
       >
-        <span style={{ fontSize: '0.8rem', fontFamily: 'var(--font-mono)', display: 'block' }}>{t('hero.scroll')}</span>
-        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" style={{ display: 'block' }}>
-          <path d="M7 13l5 5 5-5M7 6l5 5 5-5"/>
-        </svg>
-      </motion.div>
+        <motion.div
+          onClick={scrollToIdentity}
+          animate={{ y: [0, 10, 0] }}
+          transition={{ repeat: Infinity, duration: 2 }}
+          style={{
+            color: 'var(--color-white)',
+            opacity: 0.7,
+            cursor: 'pointer',
+            display: 'flex',
+            flexDirection: 'column',
+            alignItems: 'center',
+            gap: '0.5rem',
+          }}
+        >
+          <span style={{ fontSize: '0.8rem', fontFamily: 'var(--font-mono)', display: 'block' }}>{t('hero.scroll')}</span>
+          <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" style={{ display: 'block' }}>
+            <path d="M7 13l5 5 5-5M7 6l5 5 5-5"/>
+          </svg>
+        </motion.div>
+      </div>
 
       {/* Investment Modal */}
       <InvestmentModal isOpen={isModalOpen} onClose={() => setIsModalOpen(false)} />
