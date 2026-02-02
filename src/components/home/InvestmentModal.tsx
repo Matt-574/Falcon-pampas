@@ -7,7 +7,10 @@ interface InvestmentModalProps {
     onClose: () => void;
 }
 
+import { useNavigate } from 'react-router-dom';
+
 const InvestmentModal: React.FC<InvestmentModalProps> = ({ isOpen, onClose }) => {
+    const navigate = useNavigate();
     const [selectedId, setSelectedId] = useState<string | null>(null);
 
     const investmentOptions = [
@@ -175,6 +178,7 @@ const InvestmentModal: React.FC<InvestmentModalProps> = ({ isOpen, onClose }) =>
                                         <motion.button
                                             whileHover={{ scale: 1.05 }}
                                             whileTap={{ scale: 0.95 }}
+                                            onClick={() => navigate('/aplicar', { state: { type: option.id } })}
                                             style={{
                                                 width: '100%',
                                                 padding: '1rem',

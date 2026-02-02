@@ -28,7 +28,7 @@ const Navbar: React.FC = () => {
       top: 0,
       left: 0,
       width: '100%',
-      padding: '1rem 2rem',
+      padding: '1rem 1rem',
       display: 'flex',
       justifyContent: 'space-between',
       alignItems: 'center',
@@ -53,8 +53,8 @@ const Navbar: React.FC = () => {
         </span>
       </Link>
 
-      <div style={{ display: 'flex', alignItems: 'center', gap: '2rem' }}>
-        <ul style={{ display: 'flex', listStyle: 'none', gap: '2rem', alignItems: 'center', margin: 0, padding: 0 }}>
+      <div style={{ display: 'flex', alignItems: 'center', gap: '1rem' }}>
+        <ul style={{ display: 'flex', listStyle: 'none', gap: '1rem', alignItems: 'center', margin: 0, padding: 0 }}>
           <li><Link to="/tesis" style={{ color: 'var(--color-gold-imperial)', textTransform: 'uppercase', fontSize: '0.8rem', letterSpacing: '1px', fontWeight: 700 }}>{t('navbar.thesis')}</Link></li>
           <li><Link to="/divisiones" style={{ color: 'var(--color-gold-imperial)', textTransform: 'uppercase', fontSize: '0.8rem', letterSpacing: '1px', fontWeight: 700 }}>{t('navbar.divisions')}</Link></li>
           <li><Link to="/escuela" style={{ color: 'var(--color-gold-imperial)', textTransform: 'uppercase', fontSize: '0.8rem', letterSpacing: '1px', fontWeight: 700 }}>{t('navbar.school')}</Link></li>
@@ -68,13 +68,12 @@ const Navbar: React.FC = () => {
                 backgroundColor: 'var(--color-gold-imperial)', 
                 padding: '0.6rem 1.5rem', 
                 borderRadius: '2px', 
-                textTransform: 'uppercase', 
-                fontSize: '0.8rem', 
-                fontWeight: 700,
-                letterSpacing: '1px',
-                transition: 'all 0.3s ease'
+                fontWeight: 700, 
+                fontSize: '0.9rem',
+                textTransform: 'uppercase',
+                letterSpacing: '1px'
               }}>
-                  {t('navbar.request_invite')}
+                {t('navbar.request_invite')}
               </Link>
           </li>
         </ul>

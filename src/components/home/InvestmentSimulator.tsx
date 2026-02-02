@@ -3,7 +3,10 @@ import { AreaChart, Area, XAxis, YAxis, CartesianGrid, Tooltip, ResponsiveContai
 import { motion } from 'framer-motion';
 import { Sprout, Building2, Landmark } from 'lucide-react';
 
+import { useNavigate } from 'react-router-dom';
+
 const InvestmentSimulator: React.FC = () => {
+  const navigate = useNavigate();
   const [investorType, setInvestorType] = useState<'retail' | 'cbi' | 'institutional'>('retail');
   const [amount, setAmount] = useState<number>(10000);
   const [years, setYears] = useState<number>(5);
@@ -261,7 +264,15 @@ const InvestmentSimulator: React.FC = () => {
                 </div>
               </div>
 
-              <button style={{
+          <button 
+                onClick={() => navigate('/aplicar', { 
+                  state: { 
+                    simulationData: {
+                      amount, years, riskProfile, investorType, projectedValue: finalResult.total
+                    }
+                  } 
+                })}
+                style={{
                 backgroundColor: 'var(--color-gold-imperial)',
                 color: 'var(--color-navy-deep)',
                 border: 'none',

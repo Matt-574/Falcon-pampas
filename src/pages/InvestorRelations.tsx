@@ -5,18 +5,20 @@ import FinalCTA from '../components/home/FinalCTA';
 
 const InvestorRelations: React.FC = () => {
   const [isAuthenticated, setIsAuthenticated] = useState(false);
+  const [userRole, setUserRole] = useState<'admin' | 'investor'>('investor');
 
-  const handleLogin = () => {
-    // Mock login logic
+  const handleLogin = (role: 'admin' | 'investor' = 'investor') => {
+    setUserRole(role);
     setIsAuthenticated(true);
   };
 
   const handleLogout = () => {
     setIsAuthenticated(false);
+    setUserRole('investor');
   };
 
   if (isAuthenticated) {
-    return <InvestorDashboard onLogout={handleLogout} />;
+    return <InvestorDashboard onLogout={handleLogout} userRole={userRole} />;
   }
 
   return (

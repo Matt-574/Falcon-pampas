@@ -1,20 +1,21 @@
-import React from 'react';
+import { useNavigate } from 'react-router-dom';
 import { motion } from 'framer-motion';
 import { ArrowDown } from 'lucide-react';
 
 const StartupsHero: React.FC = () => {
+  const navigate = useNavigate();
   return (
     <section style={{ height: '90vh', position: 'relative', overflow: 'hidden', display: 'flex', alignItems: 'center' }}>
       
       {/* Video Background */}
+      {/* Background Image */}
       <div style={{ position: 'absolute', inset: 0 }}>
-        <video
-          autoPlay loop muted playsInline
-          style={{ width: '100%', height: '100%', objectFit: 'cover' }}
-        >
-             {/* Placeholder for "Founders working in coworking" */}
-             <source src="https://videos.pexels.com/video-files/3196059/3196059-uhd_2560_1440_25fps.mp4" type="video/mp4" />
-        </video>
+        <div style={{
+            position: 'absolute', inset: 0,
+            backgroundImage: 'url(https://lh3.googleusercontent.com/d/1PA5z-9TVGIvEWFscjtI6ZfDT-sg9fjSk)',
+            backgroundSize: 'cover',
+            backgroundPosition: 'center',
+        }} />
         {/* Navy Gradient Overlay */}
         <div style={{ position: 'absolute', inset: 0, background: 'linear-gradient(90deg, rgba(26,39,68,0.95) 0%, rgba(26,39,68,0.7) 60%, rgba(26,39,68,0.2) 100%)' }} />
       </div>
@@ -50,10 +51,7 @@ const StartupsHero: React.FC = () => {
             style={{ display: 'flex', gap: '1.5rem' }}
           >
              <button 
-                onClick={() => {
-                  const el = document.getElementById('apply');
-                  el?.scrollIntoView({ behavior: 'smooth' });
-                }}
+                onClick={() => navigate('/aplicar')}
                 style={{
                 backgroundColor: 'var(--color-gold-imperial)', color: 'var(--color-navy-deep)',
                 padding: '1rem 2.5rem', fontSize: '1.1rem', fontWeight: 600, borderRadius: '4px',

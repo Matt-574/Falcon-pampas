@@ -1,9 +1,10 @@
-import React from 'react';
+import { useNavigate } from 'react-router-dom';
 import { useTranslation } from 'react-i18next';
 import { ArrowRight } from 'lucide-react';
 
 const SchoolSection: React.FC = () => {
   const { t } = useTranslation();
+  const navigate = useNavigate();
 
   return (
     <section id="school" style={{ 
@@ -43,7 +44,9 @@ const SchoolSection: React.FC = () => {
         }}>
          {t('school.body')}
         </p>
-        <button style={{
+        <button 
+            onClick={() => navigate('/escuela')}
+            style={{
             display: 'inline-flex',
             alignItems: 'center',
             gap: '0.5rem',
@@ -55,7 +58,8 @@ const SchoolSection: React.FC = () => {
             borderRadius: '2px',
             textTransform: 'uppercase',
             letterSpacing: '1px',
-            boxShadow: '0 4px 15px rgba(201, 169, 97, 0.3)'
+            boxShadow: '0 4px 15px rgba(201, 169, 97, 0.3)',
+            cursor: 'pointer'
         }}>
             {t('school.cta')} <ArrowRight size={18} />
         </button>

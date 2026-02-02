@@ -4,9 +4,6 @@ import SchoolPurpose from '../components/school/SchoolPurpose';
 import SchoolCurriculum from '../components/school/SchoolCurriculum';
 import FalconIndex from '../components/school/FalconIndex';
 import SchoolMasterclass from '../components/school/SchoolMasterclass';
-import ScholarshipProgram from '../components/school/ScholarshipProgram';
-import SchoolCommunity from '../components/school/SchoolCommunity';
-import SchoolNewsletter from '../components/school/SchoolNewsletter';
 import FinalCTA from '../components/home/FinalCTA';
 
 const School: React.FC = () => {
@@ -17,9 +14,6 @@ const School: React.FC = () => {
       <FalconIndex />
       <SchoolMasterclass />
       <SchoolCurriculum />
-      <ScholarshipProgram />
-      <SchoolCommunity />
-      <SchoolNewsletter />
       <FinalCTA />
     </div>
   );

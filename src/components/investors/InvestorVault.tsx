@@ -3,7 +3,7 @@ import { motion } from 'framer-motion';
 import { Lock, ArrowRight, ShieldCheck } from 'lucide-react';
 
 interface Props {
-    onLogin: () => void;
+    onLogin: (role: 'admin' | 'investor') => void;
 }
 
 const InvestorVault: React.FC<Props> = ({ onLogin }) => {
@@ -33,20 +33,46 @@ const InvestorVault: React.FC<Props> = ({ onLogin }) => {
                 Accede a reportes detallados, deal flow confidencial y gestión de tu portafolio en tiempo real.
             </p>
 
-            <div style={{ display: 'flex', flexDirection: 'column', gap: '1rem', width: '100%', maxWidth: '350px', margin: '0 auto' }}>
-                <button 
-                    onClick={onLogin}
-                    style={{ 
-                        padding: '1rem', backgroundColor: 'var(--color-gold-imperial)', color: '#0F172A', 
-                        border: 'none', borderRadius: '4px', fontWeight: 700, fontSize: '1rem', cursor: 'pointer',
-                        display: 'flex', alignItems: 'center', justifyContent: 'center', gap: '0.5rem',
-                        transition: 'transform 0.2s'
+            <div style={{ width: '100%', maxWidth: '350px', margin: '0 auto' }}>
+                <form 
+                    onSubmit={(e) => {
+                        e.preventDefault();
+                        const emailInput = (document.getElementById('email') as HTMLInputElement).value;
+                        const role = emailInput.includes('admin') ? 'admin' : 'investor';
+                        onLogin(role);
                     }}
+                    style={{ display: 'flex', flexDirection: 'column', gap: '1rem' }}
                 >
-                    INGRESAR AL PORTAL <ArrowRight size={18} />
-                </button>
+                    <input 
+                        id="email"
+                        type="email" 
+                        placeholder="Correo Corporativo" 
+                        defaultValue="admin@falconpampas.com"
+                        required
+                        style={{ padding: '1rem', borderRadius: '4px', border: '1px solid #334155', backgroundColor: 'rgba(15,23,42,0.8)', color: 'white', fontSize: '1rem' }}
+                    />
+                    <input 
+                        type="password" 
+                        placeholder="Contraseña" 
+                        defaultValue="falcon123"
+                        required
+                        style={{ padding: '1rem', borderRadius: '4px', border: '1px solid #334155', backgroundColor: 'rgba(15,23,42,0.8)', color: 'white', fontSize: '1rem' }}
+                    />
+                    <button 
+                        type="submit"
+                        style={{ 
+                            padding: '1rem', backgroundColor: 'var(--color-gold-imperial)', color: '#0F172A', 
+                            border: 'none', borderRadius: '4px', fontWeight: 700, fontSize: '1rem', cursor: 'pointer',
+                            display: 'flex', alignItems: 'center', justifyContent: 'center', gap: '0.5rem',
+                            marginTop: '1rem', transition: 'transform 0.2s'
+                        }}
+                    >
+                        INGRESAR AL PORTAL <ArrowRight size={18} />
+                    </button>
+                </form>
+
                 <button style={{ 
-                    padding: '1rem', backgroundColor: 'transparent', color: '#64748B', 
+                    width: '100%', marginTop: '1rem', padding: '1rem', backgroundColor: 'transparent', color: '#64748B', 
                     border: '1px solid #334155', borderRadius: '4px', fontWeight: 600, fontSize: '0.9rem', cursor: 'pointer' 
                 }}>
                     SOLICITAR ACCESO LP

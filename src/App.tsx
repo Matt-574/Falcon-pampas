@@ -8,6 +8,7 @@ import CBI from './pages/CBI';
 import Portfolio from './pages/Portfolio';
 import Startups from './pages/Startups';
 import Reconstruction from './pages/Reconstruction';
+import Apply from './pages/Apply';
 
 import MainLayout from './layouts/MainLayout';
 
@@ -27,7 +28,9 @@ function App() {
           <Route path="/tesis" element={<Thesis />} />
           <Route path="/divisiones" element={<Divisions />} />
           <Route path="/escuela" element={<School />} />
+          <Route path="/escuela" element={<School />} />
           <Route path="/reconstruccion" element={<Reconstruction />} />
+          <Route path="/aplicar" element={<Apply />} />
         </Route>
       </Routes>
     </Router>

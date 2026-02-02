@@ -1,8 +1,10 @@
-import React from 'react';
+import { useNavigate } from 'react-router-dom';
 import { motion } from 'framer-motion';
 import { ArrowRight } from 'lucide-react';
 
 const CBIHero: React.FC = () => {
+  const navigate = useNavigate();
+
   return (
     <section style={{ height: '100vh', position: 'relative', overflow: 'hidden', display: 'flex' }}>
       
@@ -75,7 +77,9 @@ const CBIHero: React.FC = () => {
             </p>
 
             <div style={{ display: 'flex', gap: '1.5rem', flexWrap: 'wrap' }}>
-                <button style={{
+                <button 
+                    onClick={() => navigate('/aplicar')}
+                    style={{
                     backgroundColor: 'var(--color-gold-imperial)', color: 'var(--color-navy-deep)',
                     padding: '1rem 2.5rem', fontSize: '1rem', fontWeight: 600, borderRadius: '4px',
                     border: 'none', cursor: 'pointer', transition: 'var(--transition-smooth)'

@@ -1,10 +1,11 @@
 import React, { useState, useEffect } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import { ArrowRight } from 'lucide-react';
-import { useLocation } from 'react-router-dom';
+import { useLocation, useNavigate } from 'react-router-dom';
 
 const DivisionsTabs: React.FC = () => {
     const location = useLocation();
+    const navigate = useNavigate();
     const [activeTab, setActiveTab] = useState('ventures');
 
     useEffect(() => {
@@ -29,7 +30,9 @@ const DivisionsTabs: React.FC = () => {
                 { value: '340+', label: 'Empleos Creados' },
                 { value: '87%', label: 'Tasa Supervivencia' }
             ],
-            desc: "Falcon Ventures es el brazo de capital de riesgo de Falcon Pampas. Invertimos en startups argentinas en etapas tempranas (Pre-seed y Seed) que resuelven problemas reales en sectores de alto crecimiento: AgTech, FinTech, HealthTech, SaaS B2B. Nuestra diferencia: No solo damos capital, damos acceso a todo el ecosistema de servicios Falcon."
+            desc: "Falcon Ventures es el brazo de capital de riesgo de Falcon Pampas. Invertimos en startups argentinas en etapas tempranas (Pre-seed y Seed) que resuelven problemas reales en sectores de alto crecimiento: AgTech, FinTech, HealthTech, SaaS B2B. Nuestra diferencia: No solo damos capital, damos acceso a todo el ecosistema de servicios Falcon.",
+            backgroundType: 'image',
+            heroImage: '/media/divisions/ventures.png'
         },
         cap: {
             id: 'cap',
@@ -43,7 +46,9 @@ const DivisionsTabs: React.FC = () => {
                 { value: '8.2%', label: 'Yield Anual (USD)' },
                 { value: 'AAA', label: 'Rating Crediticio' }
             ],
-            desc: "Gestión activa de tesorería y arbitraje de bonos soberanos y corporativos. Utilizamos estrategias de bajo riesgo para generar un piso de rendimiento constante que proteja el capital de nuestros inversores."
+            desc: "Gestión activa de tesorería y arbitraje de bonos soberanos y corporativos. Utilizamos estrategias de bajo riesgo para generar un piso de rendimiento constante que proteja el capital de nuestros inversores.",
+            backgroundType: 'image',
+            heroImage: '/media/divisions/cap.png'
         },
         real: {
             id: 'real',
@@ -57,13 +62,15 @@ const DivisionsTabs: React.FC = () => {
                 { value: '12', label: 'Proyectos Activos' },
                 { value: '18%', label: 'IRR Promedio' }
             ],
-            desc: "Desarrollo de activos inmobiliarios premium en Mendoza y Buenos Aires. Foco en oficinas corporativas AAA y espacios de coworking para nuestro ecosistema tecnológico."
+            desc: "Desarrollo de activos inmobiliarios premium en Mendoza y Buenos Aires. Foco en oficinas corporativas AAA y espacios de coworking para nuestro ecosistema tecnológico.",
+            backgroundType: 'image',
+            heroImage: '/media/divisions/real.png'
         },
         media: {
             id: 'media',
             name: 'FALCON MEDIA',
             color: '#9F7AEA',
-            heroVideo: 'https://videos.pexels.com/video-files/2887463/2887463-uhd_2560_1440_25fps.mp4', // Placeholder: Creative/Studio
+            heroVideo: '/media/divisions/media.mp4',
             title: 'FALCON MEDIA',
             tagline: 'Growth Marketing & Storytelling',
             metrics: [
@@ -71,13 +78,14 @@ const DivisionsTabs: React.FC = () => {
                 { value: '4', label: 'Golden Lions' },
                 { value: '3x', label: 'Avg ROAS' }
             ],
-            desc: "Agencia in-house de branding y performance. Ayudamos a nuestras startups a contar su historia y adquirir usuarios de forma eficiente desde el día uno."
+            desc: "Agencia in-house de branding y performance. Ayudamos a nuestras startups a contar su historia y adquirir usuarios de forma eficiente desde el día uno.",
+            backgroundType: 'video'
         },
         tech: {
             id: 'tech',
             name: 'FALCON TECH',
             color: '#4299E1',
-            heroVideo: 'https://videos.pexels.com/video-files/1181242/1181242-hd_1920_1080_30fps.mp4', // Placeholder: Code/Server
+            heroVideo: '/media/divisions/tech.mp4',
             title: 'FALCON TECH',
             tagline: 'Software Factory & DevOps',
             metrics: [
@@ -85,13 +93,14 @@ const DivisionsTabs: React.FC = () => {
                 { value: '99.9%', label: 'Uptime' },
                 { value: '2 Weeks', label: 'Avg Sprint' }
             ],
-            desc: "Infraestructura tecnológica y desarrollo de producto. Aceleraramos el time-to-market de nuestras participadas proveyendo arquitecturas escalables y equipos de ingeniería on-demand."
+            desc: "Infraestructura tecnológica y desarrollo de producto. Aceleraramos el time-to-market de nuestras participadas proveyendo arquitecturas escalables y equipos de ingeniería on-demand.",
+            backgroundType: 'video'
         },
         sales: {
             id: 'sales',
             name: 'FALCON SALES',
             color: '#48BB78',
-            heroVideo: 'https://videos.pexels.com/video-files/3189018/3189018-hd_1920_1080_25fps.mp4', // Placeholder: Handshake/Meeting
+            heroVideo: '/media/divisions/sales.mp4',
             title: 'FALCON SALES',
             tagline: 'Outbound & Expansion',
             metrics: [
@@ -99,11 +108,26 @@ const DivisionsTabs: React.FC = () => {
                 { value: '12', label: 'Países Operados' },
                 { value: '25%', label: 'Close Rate' }
             ],
-            desc: "Máquina de ventas B2B. Implementamos procesos comerciales rigurosos y equipos de SDRs para internacionalizar las soluciones de nuestro portafolio."
+            desc: "Máquina de ventas B2B. Implementamos procesos comerciales rigurosos y equipos de SDRs para internacionalizar las soluciones de nuestro portafolio.",
+            backgroundType: 'video'
         }
     };
 
-    const current = divisions[activeTab as keyof typeof divisions];
+    // Helper interface for TypeScript (optional but good practice)
+    interface Division {
+        id: string;
+        name: string;
+        color: string;
+        heroVideo?: string;
+        heroImage?: string;
+        title: string;
+        tagline: string;
+        metrics: { value: string; label: string }[];
+        desc: string;
+        backgroundType: 'video' | 'image';
+    }
+
+    const current = divisions[activeTab as keyof typeof divisions] as Division;
 
     return (
     <div style={{ backgroundColor: 'white', minHeight: '100vh', display: 'flex', flexDirection: 'column' }}>
@@ -146,11 +170,19 @@ const DivisionsTabs: React.FC = () => {
               {/* Tab Hero */}
               <div style={{ height: '60vh', position: 'relative', overflow: 'hidden', display: 'flex', alignItems: 'center' }}>
                     <div style={{ position: 'absolute', inset: 0 }}>
-                        <video autoPlay loop muted playsInline style={{ width: '100%', height: '100%', objectFit: 'cover' }}>
-                            <source src={current.heroVideo} type="video/mp4" />
-                        </video>
-                        <div style={{ position: 'absolute', inset: 0, backgroundColor: 'rgba(26,39,68,0.7)' }} />
-                         <div style={{ position: 'absolute', inset: 0, background: `linear-gradient(90deg, ${current.color}33 0%, rgba(26,39,68,0.8) 100%)` }} />
+                        {current.backgroundType === 'video' ? (
+                            <video autoPlay loop muted playsInline key={current.heroVideo} style={{ width: '100%', height: '100%', objectFit: 'cover' }}>
+                                <source src={current.heroVideo} type="video/mp4" />
+                            </video>
+                        ) : (
+                            <img 
+                                src={current.heroImage} 
+                                alt={current.title}
+                                style={{ width: '100%', height: '100%', objectFit: 'cover' }}
+                            />
+                        )}
+                        <div style={{ position: 'absolute', inset: 0, backgroundColor: 'rgba(26,39,68,0.4)' }} />
+                         <div style={{ position: 'absolute', inset: 0, background: `linear-gradient(90deg, ${current.color}33 0%, rgba(26,39,68,0.6) 100%)` }} />
                     </div>
 
                     <div style={{ position: 'relative', zIndex: 10, maxWidth: '1400px', margin: '0 auto', padding: '0 2rem', color: 'white', width: '100%' }}>
@@ -174,7 +206,9 @@ const DivisionsTabs: React.FC = () => {
                           <p style={{ fontSize: '1.1rem', lineHeight: 1.8, color: '#4A5568' }}>
                               {current.desc}
                           </p>
-                          <button style={{ 
+                          <button 
+                              onClick={() => navigate('/aplicar')}
+                              style={{ 
                               marginTop: '2rem', padding: '1rem 2rem', backgroundColor: current.color, color: 'white',
                               border: 'none', borderRadius: '4px', fontWeight: 600, cursor: 'pointer',
                               display: 'flex', alignItems: 'center', gap: '0.5rem'

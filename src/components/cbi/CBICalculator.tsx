@@ -1,7 +1,9 @@
 import React, { useState } from 'react';
+import { useNavigate } from 'react-router-dom';
 
 
 const CBICalculator: React.FC = () => {
+  const navigate = useNavigate();
   const [investment, setInvestment] = useState(550000);
   const [familyMembers, setFamilyMembers] = useState(1);
   const [horizon, setHorizon] = useState(5);
@@ -138,13 +140,24 @@ const CBICalculator: React.FC = () => {
                     </div>
                 </div>
 
-                <button style={{
+                <button 
+                    onClick={() => navigate('/aplicar', { 
+                        state: { 
+                            simulationData: { 
+                                amount: investment, 
+                                familyMembers, 
+                                horizon,
+                                investorType: 'cbi'
+                            } 
+                        } 
+                    })}
+                    style={{
                     marginTop: '2rem', width: '100%', padding: '1rem', 
                     backgroundColor: 'var(--color-gold-imperial)', color: 'var(--color-navy-deep)',
                     border: 'none', borderRadius: '6px', fontWeight: 700, fontSize: '1rem',
                     cursor: 'pointer', transition: 'var(--transition-smooth)'
                 }}>
-                    AGENDAR CONSULTA GRATUITA
+                    COMENZAR INVERSIÓN
                 </button>
                 <p style={{ textAlign: 'center', fontSize: '0.8rem', color: '#718096', marginTop: '1rem' }}>
                     Sin compromiso. 30 minutos con un asesor especializado.

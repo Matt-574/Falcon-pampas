@@ -13,10 +13,28 @@ const SchoolHero: React.FC = () => {
       alignItems: 'center', 
       justifyContent: 'center',
       overflow: 'hidden',
-      backgroundColor: 'var(--color-navy-deep)', // Solid blue background
+      backgroundColor: 'var(--color-navy-deep)',
       color: 'var(--color-white-ivory)'
     }}>
       
+      {/* Background Image */}
+      <div style={{ position: 'absolute', top: 0, left: 0, width: '100%', height: '100%', zIndex: 0 }}>
+        <img 
+            src="/images/school-hero-bg.png" 
+            alt="Escuela Background" 
+            style={{ width: '100%', height: '100%', objectFit: 'cover' }}
+        />
+        {/* Overlay */}
+        <div style={{ 
+            position: 'absolute', 
+            top: 0, 
+            left: 0, 
+            width: '100%', 
+            height: '100%', 
+            background: 'linear-gradient(rgba(10, 17, 32, 0.6), rgba(10, 17, 32, 0.6))' 
+        }} />
+      </div>
+
       {/* Decorative Gold Curve Animation */}
       <div style={{ position: 'absolute', top: 0, left: 0, width: '100%', height: '100%', zIndex: 0, opacity: 0.3 }}>
         <svg width="100%" height="100%" viewBox="0 0 1440 800" fill="none" preserveAspectRatio="none">
@@ -68,24 +86,48 @@ const SchoolHero: React.FC = () => {
         >
           {t('school_page.hero.subtitle')}
         </motion.p>
-        <motion.button
-            initial={{ opacity: 0, scale: 0.9 }}
-            animate={{ opacity: 1, scale: 1 }}
-            transition={{ duration: 0.5, delay: 0.5 }}
-            style={{
-                padding: '1rem 3rem',
-                fontSize: '1rem',
-                fontWeight: 700,
-                backgroundColor: 'var(--color-gold-imperial)',
-                color: 'var(--color-blue-deep)',
-                border: 'none',
-                borderRadius: '2px',
-                cursor: 'pointer',
-                letterSpacing: '1px'
-            }}
-        >
-            {t('school_page.hero.cta')}
-        </motion.button>
+        
+        <div style={{ display: 'flex', gap: '1.5rem', justifyContent: 'center', flexWrap: 'wrap' }}>
+            <motion.button
+                initial={{ opacity: 0, scale: 0.9 }}
+                animate={{ opacity: 1, scale: 1 }}
+                transition={{ duration: 0.5, delay: 0.5 }}
+                onClick={() => document.getElementById('curriculum')?.scrollIntoView({ behavior: 'smooth' })}
+                style={{
+                    padding: '1rem 3rem',
+                    fontSize: '1rem',
+                    fontWeight: 700,
+                    backgroundColor: 'var(--color-gold-imperial)',
+                    color: 'var(--color-blue-deep)',
+                    border: 'none',
+                    borderRadius: '2px',
+                    cursor: 'pointer',
+                    letterSpacing: '1px'
+                }}
+            >
+                EXPLORAR CURRICULUM
+            </motion.button>
+
+             <motion.button
+                initial={{ opacity: 0, scale: 0.9 }}
+                animate={{ opacity: 1, scale: 1 }}
+                transition={{ duration: 0.5, delay: 0.6 }}
+                onClick={() => document.getElementById('falcon-index')?.scrollIntoView({ behavior: 'smooth' })}
+                style={{
+                    padding: '1rem 3rem',
+                    fontSize: '1rem',
+                    fontWeight: 700,
+                    backgroundColor: 'transparent',
+                    color: 'var(--color-gold-imperial)',
+                    border: '2px solid var(--color-gold-imperial)',
+                    borderRadius: '2px',
+                    cursor: 'pointer',
+                    letterSpacing: '1px'
+                }}
+            >
+                VER GRÁFICOS HISTÓRICOS
+            </motion.button>
+        </div>
       </div>
     </section>
   );

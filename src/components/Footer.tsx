@@ -1,6 +1,6 @@
 import React from 'react';
 import { useTranslation } from 'react-i18next';
-import logo from '../assets/logo.png';
+
 
 const Footer: React.FC = () => {
   const { t } = useTranslation();
@@ -19,16 +19,18 @@ const Footer: React.FC = () => {
         display: 'grid', 
         gridTemplateColumns: 'repeat(auto-fit, minmax(250px, 1fr))', 
         gap: '4rem',
-        alignItems: 'start'
+        justifyItems: 'center', // Center grid items horizontally
+        alignItems: 'start',    // Align items to the top
+        textAlign: 'center'     // Center text within items
       }}>
         {/* Column 1: Logo & Slogan */}
-        <div style={{ display: 'flex', flexDirection: 'column', alignItems: 'flex-start' }}>
+        <div style={{ display: 'flex', flexDirection: 'column', alignItems: 'center' }}>
           <img 
-            src={logo} 
+            src="https://lh3.googleusercontent.com/d/1cGyChdPLAs9pbpwdz2_eGKOhT7ivXFCU" 
             alt="Falcon Pampas" 
             style={{ 
-              height: '150px', // 3x larger than navbar (50px)
-              marginBottom: '1.5rem',
+              height: '300px', // 2x larger than original (150px -> 300px)
+              marginBottom: '-3.5rem',
               filter: 'brightness(1.1)' 
             }} 
           />
@@ -51,9 +53,9 @@ const Footer: React.FC = () => {
         </div>
 
         {/* Column 2: Navigation */}
-        <div>
+        <div style={{ display: 'flex', flexDirection: 'column', alignItems: 'center', marginTop: '3rem' }}>
           <h4 style={{ color: 'var(--color-gold-light)', marginBottom: '1.5rem', textTransform: 'uppercase', letterSpacing: '1px', fontSize: '0.9rem' }}>Explorar</h4>
-          <ul style={{ listStyle: 'none', padding: 0, display: 'flex', flexDirection: 'column', gap: '0.8rem' }}>
+          <ul style={{ listStyle: 'none', padding: 0, display: 'flex', flexDirection: 'column', gap: '0.8rem', alignItems: 'center' }}>
             <li><a href="#" style={{ opacity: 0.8, transition: 'color 0.2s', fontSize: '0.95rem' }}>{t('footer.nav_about')}</a></li>
             <li><a href="#thesis" style={{ opacity: 0.8, transition: 'color 0.2s', fontSize: '0.95rem' }}>{t('footer.nav_thesis')}</a></li>
             <li><a href="#" style={{ opacity: 0.8, transition: 'color 0.2s', fontSize: '0.95rem' }}>{t('footer.nav_press')}</a></li>
@@ -62,7 +64,7 @@ const Footer: React.FC = () => {
         </div>
 
         {/* Column 3: Contact */}
-        <div>
+        <div style={{ display: 'flex', flexDirection: 'column', alignItems: 'center', marginTop: '3rem' }}>
             <h4 style={{ color: 'var(--color-gold-light)', marginBottom: '1.5rem', textTransform: 'uppercase', letterSpacing: '1px', fontSize: '0.9rem' }}>Contacto</h4>
             <p style={{ marginBottom: '0.5rem', fontSize: '0.95rem' }}>{t('footer.address')}</p>
             <p style={{ marginBottom: '0.5rem', fontSize: '0.95rem', color: 'var(--color-gold-imperial)' }}>inversores@falconpampas.com</p>
@@ -80,7 +82,7 @@ const Footer: React.FC = () => {
         opacity: 0.6,
         lineHeight: 1.6
       }}>
-        <p>{t('footer.legal')}</p>
+        <p>Falcon Pampas Holdings S.A. no garantiza rendimientos futuros. Las inversiones en mercados emergentes conllevan riesgos. Lea el prospecto completo antes de invertir. © 2026 Falcon Pampas. Todos los derechos reservados.</p>
       </div>
     </footer>
   );
