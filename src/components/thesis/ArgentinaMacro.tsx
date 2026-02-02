@@ -73,7 +73,7 @@ const ArgentinaMacro: React.FC = () => {
                                     <Tooltip 
                                         contentStyle={{ backgroundColor: '#1A2744', border: 'none', borderRadius: '8px', color: '#fff' }}
                                         itemStyle={{ color: '#B8860B' }}
-                                        formatter={(value: number) => [`${value}%`, 'Tasa']}
+                                        formatter={(value: any) => [`${value}%`, 'Tasa']}
                                     />
                                     <Area 
                                         type="monotone" 
