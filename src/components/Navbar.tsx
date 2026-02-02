@@ -1,11 +1,14 @@
 import React, { useState, useEffect } from 'react';
-import { Link } from 'react-router-dom';
+import { Link, useLocation } from 'react-router-dom';
 import { useTranslation } from 'react-i18next';
 import logo from '../assets/logo.png';
+import './Navbar.css';
 
 const Navbar: React.FC = () => {
   const { t, i18n } = useTranslation();
   const [scrolled, setScrolled] = useState(false);
+  const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
+  const location = useLocation();
 
   useEffect(() => {
     const handleScroll = () => {
@@ -16,63 +19,44 @@ const Navbar: React.FC = () => {
     return () => window.removeEventListener('scroll', handleScroll);
   }, []);
 
-
+  // Close mobile menu when route changes
+  // Close mobile menu when route changes
+  useEffect(() => {
+    setMobileMenuOpen(false);
+  }, [location]);
 
   const toggleLanguage = () => {
     i18n.changeLanguage(i18n.language === 'es' ? 'en' : 'es');
   };
 
+  const toggleMobileMenu = () => {
+    setMobileMenuOpen(!mobileMenuOpen);
+  };
+
   return (
-    <nav style={{
-      position: 'fixed',
-      top: 0,
-      left: 0,
-      width: '100%',
-      padding: '1rem 1rem',
-      display: 'flex',
-      justifyContent: 'space-between',
-      alignItems: 'center',
-      zIndex: 1000,
-      transition: 'all 0.3s ease',
-      backgroundColor: scrolled ? 'rgba(12, 29, 54, 0.95)' : 'transparent',
-      backdropFilter: scrolled ? 'blur(10px)' : 'none',
-      borderBottom: scrolled ? '1px solid var(--color-gold-imperial)' : 'none',
-      height: '140px'
-    }}>
-      <Link to="/" style={{ display: 'flex', alignItems: 'center', gap: '1rem' }}>
-        <img src={logo} alt="Falcon Pampas" style={{ height: '100px' }} />
-        <span style={{ 
-          fontFamily: 'var(--font-primary)', 
-          fontSize: '1.5rem', 
-          fontWeight: 600, 
-          color: 'var(--color-gold-imperial)',
-          textTransform: 'uppercase',
-          letterSpacing: '2px'
-        }}>
-          Falcon Pampas
-        </span>
+    <nav className={`navbar-container ${scrolled ? 'navbar-scrolled' : ''}`}>
+      <Link to="/" className="navbar-logo">
+        <img src={logo} alt="Falcon Pampas" />
+        <span>Falcon Pampas</span>
       </Link>
 
-      <div style={{ display: 'flex', alignItems: 'center', gap: '1rem' }}>
-        <ul style={{ display: 'flex', listStyle: 'none', gap: '1rem', alignItems: 'center', margin: 0, padding: 0 }}>
-          <li><Link to="/tesis" style={{ color: 'var(--color-gold-imperial)', textTransform: 'uppercase', fontSize: '0.8rem', letterSpacing: '1px', fontWeight: 700 }}>{t('navbar.thesis')}</Link></li>
-          <li><Link to="/divisiones" style={{ color: 'var(--color-gold-imperial)', textTransform: 'uppercase', fontSize: '0.8rem', letterSpacing: '1px', fontWeight: 700 }}>{t('navbar.divisions')}</Link></li>
-          <li><Link to="/escuela" style={{ color: 'var(--color-gold-imperial)', textTransform: 'uppercase', fontSize: '0.8rem', letterSpacing: '1px', fontWeight: 700 }}>{t('navbar.school')}</Link></li>
-          <li><Link to="/cbi" style={{ color: 'var(--color-gold-imperial)', textTransform: 'uppercase', fontSize: '0.8rem', letterSpacing: '1px', fontWeight: 700 }}>CBI</Link></li>
-          <li><Link to="/portafolio" style={{ color: 'var(--color-gold-imperial)', textTransform: 'uppercase', fontSize: '0.8rem', letterSpacing: '1px', fontWeight: 700 }}>NUESTRAS STARTUPS</Link></li>
-          <li><Link to="/startups" style={{ color: 'var(--color-gold-imperial)', textTransform: 'uppercase', fontSize: '0.8rem', letterSpacing: '1px', fontWeight: 700 }}>APLICA A FALCON VENTURES</Link></li>
+      <button className="mobile-toggle" onClick={toggleMobileMenu} aria-label="Toggle menu">
+        <span style={{ transform: mobileMenuOpen ? 'rotate(45deg) translate(5px, 6px)' : 'none' }}></span>
+        <span style={{ opacity: mobileMenuOpen ? 0 : 1 }}></span>
+        <span style={{ transform: mobileMenuOpen ? 'rotate(-45deg) translate(5px, -6px)' : 'none' }}></span>
+      </button>
+
+      <div className={`navbar-actions ${mobileMenuOpen ? 'open' : ''}`}>
+        <ul className="navbar-links">
+          <li><Link to="/tesis" className="navbar-link">{t('navbar.thesis')}</Link></li>
+          <li><Link to="/divisiones" className="navbar-link">{t('navbar.divisions')}</Link></li>
+          <li><Link to="/escuela" className="navbar-link">{t('navbar.school')}</Link></li>
+          <li><Link to="/cbi" className="navbar-link">CBI</Link></li>
+          <li><Link to="/portafolio" className="navbar-link">STARTUPS</Link></li>
+          <li><Link to="/startups" className="navbar-link">APLICA A FALCON VENTURES</Link></li>
           
           <li>
-              <Link to="/investor-relations" style={{ 
-                color: 'var(--color-blue-deep)', 
-                backgroundColor: 'var(--color-gold-imperial)', 
-                padding: '0.6rem 1.5rem', 
-                borderRadius: '2px', 
-                fontWeight: 700, 
-                fontSize: '0.9rem',
-                textTransform: 'uppercase',
-                letterSpacing: '1px'
-              }}>
+              <Link to="/investor-relations" className="navbar-cta">
                 {t('navbar.request_invite')}
               </Link>
           </li>
@@ -80,15 +64,7 @@ const Navbar: React.FC = () => {
 
         <button 
           onClick={toggleLanguage}
-          style={{
-            color: 'var(--color-gold-imperial)',
-            border: '1px solid var(--color-gold-imperial)',
-            padding: '0.4rem 0.8rem',
-            borderRadius: '2px',
-            fontSize: '0.8rem',
-            textTransform: 'uppercase',
-            fontWeight: 600
-          }}
+          className="language-btn"
         >
           {i18n.language === 'en' ? 'ES' : 'EN'}
         </button>

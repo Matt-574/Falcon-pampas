@@ -1,8 +1,11 @@
 import React from 'react';
 import { motion } from 'framer-motion';
 import { Shield, Sprout, RefreshCw } from 'lucide-react';
+import { useTranslation } from 'react-i18next';
 
 const IdentitySection: React.FC = () => {
+  const { t } = useTranslation();
+  
   const fadeInUp = {
     hidden: { opacity: 0, y: 30 },
     visible: { opacity: 1, y: 0, transition: { duration: 0.6 } }
@@ -11,18 +14,18 @@ const IdentitySection: React.FC = () => {
   const features = [
     {
       icon: <Shield className="w-6 h-6 text-gold" />,
-      title: "Registro RICE",
-      description: "Registrados en el Ministerio de Economía. Compliance institucional."
+      title: t('identity.features.rice.title'),
+      description: t('identity.features.rice.desc')
     },
     {
       icon: <Sprout className="w-6 h-6 text-gold" />,
-      title: "Economía Real",
-      description: "Invertimos en activos tangibles: agro, energía, tecnología."
+      title: t('identity.features.real_economy.title'),
+      description: t('identity.features.real_economy.desc')
     },
     {
       icon: <RefreshCw className="w-6 h-6 text-gold" />,
-      title: "Ecosistema Sinérgico",
-      description: "Nuestras empresas de servicios potencian a las startups."
+      title: t('identity.features.synergy.title'),
+      description: t('identity.features.synergy.desc')
     }
   ];
 
@@ -59,7 +62,7 @@ const IdentitySection: React.FC = () => {
             display: 'block',
             marginBottom: '1rem'
           }}>
-            SOBRE FALCON PAMPAS
+            {t('identity.label')}
           </motion.span>
           
           <motion.h2 variants={fadeInUp} style={{ 
@@ -69,9 +72,7 @@ const IdentitySection: React.FC = () => {
             fontWeight: 600,
             lineHeight: 1.2,
             marginBottom: '1.5rem' 
-          }}>
-            No Somos un Fondo Tradicional. <br />
-            Somos Constructores de Argentina.
+          }} dangerouslySetInnerHTML={{ __html: t('identity.title') }}>
           </motion.h2>
 
           <motion.p variants={fadeInUp} style={{ 
@@ -80,7 +81,7 @@ const IdentitySection: React.FC = () => {
             marginBottom: '3rem',
             fontSize: '1.1rem'
           }}>
-            Falcon Pampas es un ecosistema de inversión que combina la gestión financiera institucional con un portafolio de empresas operativas. No solo invertimos en startups: las incubamos, las potenciamos con servicios compartidos, y las hacemos crecer juntas. Somos propietarios permanentes con visión de 50 años.
+            {t('identity.description')}
           </motion.p>
 
           <div style={{ display: 'flex', flexDirection: 'column', gap: '2rem' }}>

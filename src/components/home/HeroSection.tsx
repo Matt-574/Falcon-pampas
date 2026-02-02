@@ -1,9 +1,11 @@
 import React, { useState } from 'react';
 import { motion } from 'framer-motion';
 import { Link } from 'react-router-dom';
+import { useTranslation } from 'react-i18next';
 import InvestmentModal from './InvestmentModal';
 
 const HeroSection: React.FC = () => {
+  const { t } = useTranslation();
   const [isModalOpen, setIsModalOpen] = useState(false);
 
   const scrollToIdentity = () => {
@@ -76,9 +78,8 @@ const HeroSection: React.FC = () => {
             lineHeight: 1.1,
             color: 'var(--color-white)'
           }}
-        >
-          CAPITAL NACIONAL.<br />VISIÓN GLOBAL.
-        </motion.h1>
+          dangerouslySetInnerHTML={{ __html: t('hero.title') }}
+        />
 
         <motion.h2
           initial={{ opacity: 0, y: 30 }}
@@ -93,7 +94,7 @@ const HeroSection: React.FC = () => {
             color: 'var(--color-white)'
           }}
         >
-          El vehículo de inversión para la Argentina productiva.
+          {t('hero.subtitle_1')}
         </motion.h2>
 
         <motion.p
@@ -108,7 +109,7 @@ const HeroSection: React.FC = () => {
              opacity: 0.9
           }}
         >
-          Transformamos capital en activos reales: Agro, Energía, Tecnología.
+          {t('hero.subtitle_2')}
         </motion.p>
 
         <div style={{ display: 'flex', gap: '1.5rem', flexWrap: 'wrap', justifyContent: 'center' }}>
@@ -131,7 +132,7 @@ const HeroSection: React.FC = () => {
               fontFamily: 'var(--font-mono)'
             }}
           >
-            DESCUBRE CÓMO INVERTIR
+            {t('hero.cta_invest')}
           </motion.button>
 
           <Link to="/tesis">
@@ -153,7 +154,7 @@ const HeroSection: React.FC = () => {
                  fontFamily: 'var(--font-mono)'
                }}
             >
-               NUESTRA TESIS
+               {t('hero.cta_thesis')}
             </motion.button>
           </Link>
         </div>
@@ -168,16 +169,19 @@ const HeroSection: React.FC = () => {
           position: 'absolute',
           bottom: '2rem',
           left: '50%',
-          transform: 'translateX(-50%)', // Keeps it strictly centered
+          transform: 'translateX(-50%)',
           color: 'var(--color-white)',
           opacity: 0.7,
           cursor: 'pointer',
-          textAlign: 'center', // Ensures text inside is centered
-          width: 'max-content' // Prevents full-width blocks potentially skewing layout
+          display: 'flex',
+          flexDirection: 'column',
+          alignItems: 'center',
+          gap: '0.5rem',
+          width: 'max-content'
         }}
       >
-        <span style={{ fontSize: '0.8rem', fontFamily: 'var(--font-mono)', marginBottom: '0.5rem', display: 'block' }}>Scroll para explorar</span>
-        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" style={{ margin: '0 auto', display: 'block' }}>
+        <span style={{ fontSize: '0.8rem', fontFamily: 'var(--font-mono)', display: 'block' }}>{t('hero.scroll')}</span>
+        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" style={{ display: 'block' }}>
           <path d="M7 13l5 5 5-5M7 6l5 5 5-5"/>
         </svg>
       </motion.div>

@@ -2,10 +2,11 @@ import React, { useState, useMemo } from 'react';
 import { AreaChart, Area, XAxis, YAxis, CartesianGrid, Tooltip, ResponsiveContainer } from 'recharts';
 import { motion } from 'framer-motion';
 import { Sprout, Building2, Landmark } from 'lucide-react';
-
+import { useTranslation } from 'react-i18next';
 import { useNavigate } from 'react-router-dom';
 
 const InvestmentSimulator: React.FC = () => {
+  const { t } = useTranslation();
   const navigate = useNavigate();
   const [investorType, setInvestorType] = useState<'retail' | 'cbi' | 'institutional'>('retail');
   const [amount, setAmount] = useState<number>(10000);
@@ -40,18 +41,18 @@ const InvestmentSimulator: React.FC = () => {
         }
     };
 
-    const { t, s } = getAllocation(riskProfile);
+    const { t: alloT, s: alloS } = getAllocation(riskProfile);
     const treasuryRate = RATES.treasury;
     const startupRate = RATES.startups[riskProfile];
 
     // ... calculation ...
-    let currentTreasury = amount * t;
-    let currentStartups = amount * s;
+    let currentTreasury = amount * alloT;
+    let currentStartups = amount * alloS;
 
     const result = [];
     for (let i = 0; i <= years; i++) {
       result.push({
-        year: `Año ${i}`,
+        year: `${t('navbar.school').replace('Escuela', 'Año')} ${i}`, 
         treasury: Math.round(currentTreasury),
         startups: Math.round(currentStartups),
         total: Math.round(currentTreasury + currentStartups)
@@ -60,7 +61,7 @@ const InvestmentSimulator: React.FC = () => {
       currentStartups *= (1 + startupRate);
     }
     return result;
-  }, [amount, years, riskProfile]);
+  }, [amount, years, riskProfile, t]);
 
   const finalResult = data[data.length - 1];
   const initialTotal = amount;
@@ -84,9 +85,9 @@ const InvestmentSimulator: React.FC = () => {
         
         {/* Header */}
         <div style={{ textAlign: 'center', marginBottom: '4rem' }}>
-          <span style={{ color: 'var(--color-gold-imperial)', letterSpacing: '2px', fontSize: '0.9rem', fontWeight: 700 }}>SIMULADOR INTERACTIVO</span>
-          <h2 style={{ fontSize: '2.5rem', fontFamily: 'var(--font-primary)', margin: '1rem 0' }}>Visualiza el Potencial de Tu Inversión</h2>
-          <p style={{ color: 'var(--color-gray-slate)', fontSize: '1.1rem' }}>Selecciona tu perfil, ajusta los parámetros y observa cómo crece tu capital.</p>
+          <span style={{ color: 'var(--color-gold-imperial)', letterSpacing: '2px', fontSize: '0.9rem', fontWeight: 700 }}>{t('simulator.label')}</span>
+          <h2 style={{ fontSize: '2.5rem', fontFamily: 'var(--font-primary)', margin: '1rem 0' }}>{t('simulator.title')}</h2>
+          <p style={{ color: 'var(--color-gray-slate)', fontSize: '1.1rem' }}>{t('simulator.description')}</p>
         </div>
 
         {/* Simulator Grid */}
@@ -94,11 +95,11 @@ const InvestmentSimulator: React.FC = () => {
           
           {/* Col 1: Controls */}
           <div style={{ backgroundColor: 'rgba(255,255,255,0.05)', padding: '2rem', borderRadius: '12px' }}>
-            <h3 style={{ marginBottom: '1.5rem', borderBottom: '1px solid rgba(255,255,255,0.1)', paddingBottom: '0.5rem' }}>Configuración</h3>
+            <h3 style={{ marginBottom: '1.5rem', borderBottom: '1px solid rgba(255,255,255,0.1)', paddingBottom: '0.5rem' }}>{t('simulator.config')}</h3>
             
             {/* Investor Type */}
             <div style={{ marginBottom: '2rem' }}>
-              <label style={{ display: 'block', marginBottom: '1rem', fontSize: '0.9rem', opacity: 0.8 }}>TIPO DE INVERSOR</label>
+              <label style={{ display: 'block', marginBottom: '1rem', fontSize: '0.9rem', opacity: 0.8 }}>{t('simulator.investor_type')}</label>
               <div style={{ display: 'flex', gap: '0.5rem' }}>
                 {[
                   { id: 'retail', icon: <Sprout size={16} />, label: 'Retail' },
@@ -134,7 +135,7 @@ const InvestmentSimulator: React.FC = () => {
             {/* Amount Slider */}
             <div style={{ marginBottom: '2rem' }}>
               <label style={{ display: 'flex', justifyContent: 'space-between', marginBottom: '0.5rem' }}>
-                <span>Inversión Inicial</span>
+                <span>{t('simulator.initial_investment')}</span>
                 <span style={{ color: 'var(--color-gold-imperial)', fontWeight: 600 }}>{formatCurrency(amount)}</span>
               </label>
               <input 
@@ -151,8 +152,8 @@ const InvestmentSimulator: React.FC = () => {
             {/* Time Slider */}
             <div style={{ marginBottom: '2rem' }}>
               <label style={{ display: 'flex', justifyContent: 'space-between', marginBottom: '0.5rem' }}>
-                <span>Horizonte Temporal</span>
-                <span style={{ color: 'var(--color-gold-imperial)', fontWeight: 600 }}>{years} Años</span>
+                <span>{t('simulator.time_horizon')}</span>
+                <span style={{ color: 'var(--color-gold-imperial)', fontWeight: 600 }}>{years}</span>
               </label>
               <input 
                 type="range" 
@@ -170,7 +171,7 @@ const InvestmentSimulator: React.FC = () => {
 
              {/* Risk Profile */}
              <div>
-              <label style={{ display: 'block', marginBottom: '1rem', fontSize: '0.9rem', opacity: 0.8 }}>PERFIL DE RIESGO</label>
+              <label style={{ display: 'block', marginBottom: '1rem', fontSize: '0.9rem', opacity: 0.8 }}>{t('simulator.risk_profile')}</label>
               <div style={{ display: 'flex', backgroundColor: 'rgba(0,0,0,0.2)', borderRadius: '8px', padding: '4px' }}>
                 {['conservative', 'balanced', 'aggressive'].map((profile) => (
                   <button
@@ -188,7 +189,7 @@ const InvestmentSimulator: React.FC = () => {
                       textTransform: 'capitalize'
                     }}
                   >
-                    {profile === 'conservative' ? 'Conservador' : profile === 'balanced' ? 'Balanceado' : 'Agresivo'}
+                    {t(`simulator.risk_levels.${profile}`)}
                   </button>
                 ))}
               </div>
@@ -224,7 +225,7 @@ const InvestmentSimulator: React.FC = () => {
                   stackId="1" 
                   stroke="#B8860B" 
                   fill="url(#colorStartups)" 
-                  name="Startups (VC)"
+                  name={t('simulator.chart.startups')}
                 />
                 <Area 
                   type="monotone" 
@@ -232,7 +233,7 @@ const InvestmentSimulator: React.FC = () => {
                   stackId="1" 
                   stroke="#4A5568" 
                   fill="url(#colorTreasury)" 
-                  name="Tesorería"
+                  name={t('simulator.chart.treasury')}
                 />
               </AreaChart>
             </ResponsiveContainer>
@@ -241,7 +242,7 @@ const InvestmentSimulator: React.FC = () => {
           {/* Col 3: Results */}
           <div style={{ display: 'flex', flexDirection: 'column', gap: '1.5rem', justifyContent: 'center', height: '100%' }}>
               <div style={{ textAlign: 'center' }}>
-                <span style={{ display: 'block', fontSize: '0.9rem', color: 'rgba(255,255,255,0.6)', marginBottom: '0.5rem' }}>VALOR PROYECTADO ({data[data.length-1].year})</span>
+                <span style={{ display: 'block', fontSize: '0.9rem', color: 'rgba(255,255,255,0.6)', marginBottom: '0.5rem' }}>{t('simulator.projected_value')} ({data[data.length-1].year})</span>
                 <motion.div
                   key={finalResult.total}
                   initial={{ scale: 0.9, opacity: 0.5 }}
@@ -250,16 +251,16 @@ const InvestmentSimulator: React.FC = () => {
                 >
                   {formatCurrency(finalResult.total)}
                 </motion.div>
-                <span style={{ color: '#48BB78', fontWeight: 600 }}>+{growth.toFixed(1)}% vs inversión inicial</span>
+                <span style={{ color: '#48BB78', fontWeight: 600 }}>+{growth.toFixed(1)}{t('simulator.growth_vs_initial')}</span>
               </div>
 
               <div style={{ margin: '1rem 0', padding: '1.5rem', borderTop: '1px solid rgba(255,255,255,0.1)', borderBottom: '1px solid rgba(255,255,255,0.1)' }}>
                 <div style={{ display: 'flex', justifyContent: 'space-between', marginBottom: '0.5rem' }}>
-                  <span style={{ display: 'flex', alignItems: 'center', gap: '0.5rem' }}><div style={{width:8, height:8, background:'#4A5568', borderRadius:'50%'}}/> Tesorería ({currentAllocation.t * 100}%)</span>
+                  <span style={{ display: 'flex', alignItems: 'center', gap: '0.5rem' }}><div style={{width:8, height:8, background:'#4A5568', borderRadius:'50%'}}/> {t('simulator.chart.treasury')} ({currentAllocation.t * 100}%)</span>
                   <span>{formatCurrency(finalResult.treasury)}</span>
                 </div>
                 <div style={{ display: 'flex', justifyContent: 'space-between' }}>
-                  <span style={{ display: 'flex', alignItems: 'center', gap: '0.5rem' }}><div style={{width:8, height:8, background:'#B8860B', borderRadius:'50%'}}/> Startups ({currentAllocation.s * 100}%)</span>
+                  <span style={{ display: 'flex', alignItems: 'center', gap: '0.5rem' }}><div style={{width:8, height:8, background:'#B8860B', borderRadius:'50%'}}/> {t('simulator.chart.startups')} ({currentAllocation.s * 100}%)</span>
                   <span>{formatCurrency(finalResult.startups)}</span>
                 </div>
               </div>
@@ -283,11 +284,11 @@ const InvestmentSimulator: React.FC = () => {
                 cursor: 'pointer',
                 transition: 'var(--transition-smooth)'
               }}>
-                SOLICITAR INFORMACIÓN DETALLADA
+                {t('simulator.cta')}
               </button>
               
               <p style={{ fontSize: '0.7rem', color: 'rgba(255,255,255,0.3)', textAlign: 'center', lineHeight: 1.4 }}>
-                *Proyecciones basadas en rendimientos históricos: Tesorería 8% anual, Startups 15-25% anual. Los rendimientos pasados no garantizan futuros.
+                {t('simulator.disclaimer')}
               </p>
           </div>
 

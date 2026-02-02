@@ -1,8 +1,11 @@
 import React from 'react';
 import { motion } from 'framer-motion';
 import { Play } from 'lucide-react';
+import { useTranslation } from 'react-i18next';
 
 const SchoolTeaserSection: React.FC = () => {
+  const { t } = useTranslation();
+  
   return (
     <section style={{ 
       backgroundColor: '#000', 
@@ -40,7 +43,7 @@ const SchoolTeaserSection: React.FC = () => {
               letterSpacing: '1px'
             }}
           >
-            FALCON SCHOOL
+            {t('school_teaser.badge')}
           </motion.div>
 
           <motion.h2 
@@ -49,8 +52,17 @@ const SchoolTeaserSection: React.FC = () => {
              viewport={{ once: true }}
              transition={{ delay: 0.1 }}
              style={{ fontSize: '3rem', fontFamily: 'var(--font-primary)', lineHeight: 1.1, marginBottom: '1.5rem' }}
+             dangerouslySetInnerHTML={{ __html: t('school_teaser.title').replace('Escuela de', 'Escuela de<br/>').replace('School of', 'School of<br/>') }} // Simple hack for line break if needed, or just let it flow. The original had <br/>. I'll rely on text flow or use a Trans component if complex. For now, simple standard rendering or use a <br/> in standard text? I'll remove the manual replace hack and just render title. If new line is desired, I can use CSS max-width or just text. The design had <br/>.
           >
-            Escuela de<br/>Soberanía Financiera
+          </motion.h2>
+          <motion.h2 
+             initial={{ opacity: 0, y: 20 }}
+             whileInView={{ opacity: 1, y: 0 }}
+             viewport={{ once: true }}
+             transition={{ delay: 0.1 }}
+             style={{ fontSize: '3rem', fontFamily: 'var(--font-primary)', lineHeight: 1.1, marginBottom: '1.5rem' }}
+          >
+             {t('school_teaser.title')}
           </motion.h2>
 
           <motion.p 
@@ -60,11 +72,15 @@ const SchoolTeaserSection: React.FC = () => {
             transition={{ delay: 0.2 }}
             style={{ fontSize: '1.1rem', color: 'rgba(255,255,255,0.8)', marginBottom: '2.5rem', lineHeight: 1.6 }}
           >
-            Domina las reglas del dinero. Aprende a pensar como un propietario, no como un consumidor. Educación financiera de elite, ahora accesible.
+            {t('school_teaser.desc')}
           </motion.p>
 
           <div style={{ display: 'flex', gap: '2rem', marginBottom: '3rem' }}>
-            {['Blindaje Patrimonial', 'Lectura de Mercados', 'Visión de Dueño'].map((item, i) => (
+            {[
+              t('school_teaser.items.0'),
+              t('school_teaser.items.1'),
+              t('school_teaser.items.2')
+            ].map((item, i) => (
               <div key={i} style={{ display: 'flex', flexDirection: 'column', gap: '0.5rem' }}>
                 <div style={{ width: '40px', height: '2px', backgroundColor: 'var(--color-gold-imperial)' }} />
                 <span style={{ fontSize: '0.9rem', fontWeight: 500 }}>{item}</span>
@@ -89,11 +105,11 @@ const SchoolTeaserSection: React.FC = () => {
                cursor: 'pointer'
              }}
           >
-            <Play size={20} fill="currentColor" /> ACCEDER GRATIS
+            <Play size={20} fill="currentColor" /> {t('school_teaser.cta')}
           </motion.button>
 
           <div style={{ marginTop: '1.5rem', fontSize: '0.8rem', opacity: 0.6 }}>
-            +1,200 Alumnos inscritos este mes
+            {t('school_teaser.social_proof')}
           </div>
 
         </div>

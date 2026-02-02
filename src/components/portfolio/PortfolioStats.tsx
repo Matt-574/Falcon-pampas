@@ -1,5 +1,6 @@
 import React from 'react';
 import { Rocket, Coins, Users, TrendingUp } from 'lucide-react';
+import { useTranslation } from 'react-i18next';
 
 const StatItem: React.FC<{ icon: React.ReactNode, value: number, suffix?: string, label: string }> = ({ icon, value, suffix = '', label }) => {
     const [count, setCount] = React.useState(0);
@@ -37,14 +38,29 @@ const StatItem: React.FC<{ icon: React.ReactNode, value: number, suffix?: string
 
 
 const PortfolioStats: React.FC = () => {
+  const { t } = useTranslation();
+
   return (
-    <section style={{ backgroundColor: 'white', borderBottom: '1px solid #E2E8F0' }}>
+    <section style={{ backgroundColor: 'white', borderBottom: '1px solid #E2E8F0', padding: '4rem 0' }}>
+      <div style={{ textAlign: 'center', marginBottom: '3rem' }}>
+        <h2 style={{ 
+          color: 'var(--color-navy-deep)', 
+          fontSize: '2rem', 
+          fontFamily: 'var(--font-primary)',
+          letterSpacing: '1px',
+          textTransform: 'uppercase'
+        }}>
+          {t('common.objectives')}
+        </h2>
+        <div style={{ width: '60px', height: '3px', backgroundColor: 'var(--color-gold-imperial)', margin: '1rem auto' }}></div>
+      </div>
+
       <div style={{ maxWidth: '1400px', margin: '0 auto', display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(200px, 1fr))' }}>
         
         <StatItem 
             icon={<Rocket size={32} />} 
             value={24} suffix="+" 
-            label="Startups Activas" 
+            label={t('portfolio.stats.active_startups')} 
         />
         
         {/* For $8.5M, we might need custom logic, I'll hardcode the display for simplicity of the "Counter 0->8.5" requirement */}
@@ -56,23 +72,23 @@ const PortfolioStats: React.FC = () => {
                 $8.5M
             </div>
             <div style={{ color: '#718096', fontSize: '0.9rem', textTransform: 'uppercase', letterSpacing: '1px' }}>
-                Capital Desplegado
+                {t('portfolio.stats.capital_deployed')}
             </div>
         </div>
 
-        <div style={{ textAlign: 'center', padding: '2rem', borderLeft: '1px solid #E2E8F0' }}>
+        <div style={{ textAlign: 'center', borderLeft: '1px solid #E2E8F0' }}>
              <StatItem 
                 icon={<Users size={32} />} 
                 value={340} suffix="+" 
-                label="Empleos Generados" 
+                label={t('portfolio.stats.jobs_generated')} 
             />
         </div>
 
-        <div style={{ textAlign: 'center', padding: '2rem', borderLeft: '1px solid #E2E8F0' }}>
+        <div style={{ textAlign: 'center', borderLeft: '1px solid #E2E8F0' }}>
             <StatItem 
                 icon={<TrendingUp size={32} />} 
                 value={87} suffix="%" 
-                label="Tasa de Supervivencia" 
+                label={t('portfolio.stats.survival_rate')} 
             />
         </div>
 

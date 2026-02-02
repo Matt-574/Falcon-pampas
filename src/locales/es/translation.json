@@ -1,4 +1,8 @@
 {
+  "common": {
+    "objectives": "Objetivos",
+    "startups": "Startups"
+  },
   "navbar": {
     "thesis": "Tesis",
     "divisions": "Divisiones",
@@ -8,9 +12,12 @@
     "request_invite": "Solicitar Invitación"
   },
   "hero": {
-    "title": "CAPITAL NACIONAL. VISIÓN GLOBAL.",
-    "subtitle": "Transformamos la volatilidad financiera en activos productivos reales. El vehículo de inversión definitivo para la Argentina que viene.",
-    "cta": "NUESTRA TESIS DE INVERSIÓN"
+    "title": "CAPITAL NACIONAL.<br />VISIÓN GLOBAL.",
+    "subtitle_1": "El vehículo de inversión para la Argentina productiva.",
+    "subtitle_2": "Transformamos capital en activos reales: Agro, Energía, Tecnología.",
+    "cta_invest": "DESCUBRE CÓMO INVERTIR",
+    "cta_thesis": "NUESTRA TESIS",
+    "scroll": "Scroll para explorar"
   },
   "principles": {
     "title": "NO ESPECULAMOS. CONSTRUIMOS.",
@@ -177,6 +184,240 @@
       "p3_title": "VALUACIÓN DE ACTIVOS",
       "p3_desc": "Distinga entre Precio y Valor. Metodologías de Private Equity aplicadas.",
       "p3_class": "Taller: Buscando Asimetrías"
+    }
+  },
+  "identity": {
+    "label": "SOBRE FALCON PAMPAS",
+    "title": "No Somos un Fondo Tradicional. <br /> Somos Constructores de Argentina.",
+    "description": "Falcon Pampas es un ecosistema de inversión que combina la gestión financiera institucional con un portafolio de empresas operativas. No solo invertimos en startups: las incubamos, las potenciamos con servicios compartidos, y las hacemos crecer juntas. Somos propietarios permanentes con visión de 50 años.",
+    "features": {
+      "rice": {
+        "title": "Registro RICE",
+        "desc": "Registrados en el Ministerio de Economía. Compliance institucional."
+      },
+      "real_economy": {
+        "title": "Economía Real",
+        "desc": "Invertimos en activos tangibles: agro, energía, tecnología."
+      },
+      "synergy": {
+        "title": "Ecosistema Sinérgico",
+        "desc": "Nuestras empresas de servicios potencian a las startups."
+      }
+    }
+  },
+  "simulator": {
+    "label": "SIMULADOR INTERACTIVO",
+    "title": "Visualiza el Potencial de Tu Inversión",
+    "description": "Selecciona tu perfil, ajusta los parámetros y observa cómo crece tu capital.",
+    "config": "Configuración",
+    "investor_type": "TIPO DE INVERSOR",
+    "initial_investment": "Inversión Inicial",
+    "time_horizon": "Horizonte Temporal",
+    "risk_profile": "PERFIL DE RIESGO",
+    "projected_value": "VALOR PROYECTADO",
+    "growth_vs_initial": "% vs inversión inicial",
+    "chart": {
+      "startups": "Startups (VC)",
+      "treasury": "Tesorería"
+    },
+    "cta": "SOLICITAR INFORMACIÓN DETALLADA",
+    "disclaimer": "*Proyecciones basadas en rendimientos históricos: Tesorería 8% anual, Startups 15-25% anual. Los rendimientos pasados no garantizan futuros.",
+    "risk_levels": {
+      "conservative": "Conservador",
+      "balanced": "Balanceado",
+      "aggressive": "Agresivo"
+    }
+  },
+  "why_argentina": {
+    "label": "LA OPORTUNIDAD",
+    "title": "El Momento es Ahora",
+    "hint": "Argentina: Tierra de Oportunidades",
+    "reasons": {
+      "vaca_muerta": {
+        "title": "VACA MUERTA",
+        "subtitle": "Reserva de shale gas más grande del mundo",
+        "desc": "Potencial para convertir a Argentina en exportador neto de energía."
+      },
+      "lithium": {
+        "title": "LITIO",
+        "subtitle": "De las reservas mundiales",
+        "desc": "Parte del triángulo del litio, clave para la transición energética global."
+      },
+      "agribusiness": {
+        "title": "AGROINDUSTRIA",
+        "subtitle": "Exportador mundial de soja y maíz",
+        "desc": "La potencia alimentaria más eficiente del planeta."
+      },
+      "recovery": {
+        "title": "RECUPERACIÓN",
+        "subtitle": "Activos a precio de liquidación",
+        "desc": "Fundamentos de potencia mundial con valuaciones de crisis."
+      }
+    }
+  },
+  "home_ecosystem": {
+    "label": "NUESTRAS DIVISIONES",
+    "title": "Un Ecosistema Diseñado para Multiplicar",
+    "explore": "Explorar",
+    "divisions": {
+      "ventures": {
+        "title": "FP-VENTURES",
+        "tagline": "Capital semilla para el talento argentino"
+      },
+      "cap": {
+        "title": "FP-CAP",
+        "tagline": "Gestión de tesorería y renta fija"
+      },
+      "real": {
+        "title": "FP-REAL",
+        "tagline": "Activos reales: agro, energía, real estate"
+      },
+      "media": {
+        "title": "FALCON MEDIA",
+        "tagline": "Branding y marketing para startups"
+      },
+      "tech": {
+        "title": "FALCON TECH",
+        "tagline": "Desarrollo de software e IA"
+      },
+      "sales": {
+        "title": "FALCON SALES",
+        "tagline": "Fuerza de ventas profesional"
+      }
+    }
+  },
+  "investor_types": {
+    "title": "Encuentra Tu Camino",
+    "subtitle": "Soluciones adaptadas a cada etapa de tu crecimiento financiero.",
+    "ticket_label": "TICKET DE ENTRADA",
+    "coming_soon": "PRÓXIMAMENTE",
+    "exclusive_program": "PROGRAMA EXCLUSIVO",
+    "more_info": "MÁS INFORMACIÓN",
+    "key_benefits": "Beneficios Clave",
+    "modal_disclaimer": "Para más información detallada sobre este programa, por favor contacte a nuestro equipo de Relaciones con Inversores.",
+    "types": {
+      "retail": {
+        "title": "Retail",
+        "subtitle": "Falcon App",
+        "desc": "Acceso democrático a inversiones de calibre institucional desde tu celular.",
+        "features": {
+          "0": "Micro-inversión",
+          "1": "Liquidez inmediata",
+          "2": "Cero comisiones ocultas"
+        },
+        "details": {
+          "title": "Falcon App - Inversión Retail",
+          "long_desc": "La democratización de las inversiones de alto calibre. Nuestra plataforma móvil permitirá a cualquier persona acceder a participaciones fraccionadas en proyectos de Real Estate Premium, Agroindustria Exportadora y Startups Tecnológicas, activos que históricamente estuvieron reservados para grandes capitales.",
+          "benefits": {
+            "0": "Ticket de entrada accesible desde $50.",
+            "1": "Mercado secundario para liquidez inmediata.",
+            "2": "Diversificación automática en múltiples activos.",
+            "3": "Gestión 100% digital desde la App."
+          }
+        }
+      },
+      "cbi": {
+        "title": "CBI",
+        "subtitle": "Ciudadanía por Inversión",
+        "desc": "Obtenga la residencia y ciudadanía argentina invirtiendo en sectores estratégicos.",
+        "features": {
+          "0": "Pasaporte Argentino",
+          "1": "Beneficios fiscales",
+          "2": "Concierge Service"
+        },
+        "details": {
+          "title": "Ciudadanía por Inversión (CBI)",
+          "long_desc": "Un programa exclusivo diseñado para inversores internacionales que buscan obtener residencia legal y ciudadanía argentina mediante inversiones estratégicas en la economía real del país. Facilitamos todo el proceso legal y migratorio mientras su capital trabaja en sectores productivos de alto rendimiento.",
+          "benefits": {
+            "0": "Tramitación acelerada de Residencia y Ciudadanía.",
+            "1": "Pasaporte Mercosur con acceso global.",
+            "2": "Planificación fiscal internacional eficiente.",
+            "3": "Servicio de Concierge VIP para relocation y lifestyle."
+          }
+        }
+      },
+      "institutional": {
+        "title": "Institucional",
+        "subtitle": "Family Offices & Fondos",
+        "desc": "Vehículos estructurados a medida para preservación y multiplicación de patrimonio.",
+        "features": {
+          "0": "Co-inversión directa",
+          "1": "Reportes trimestrales",
+          "2": "Estructuración legal"
+        },
+        "details": {
+          "title": "Soluciones Institucionales",
+          "long_desc": "Vehículos de inversión hechos a medida para Family Offices, Fondos de Cobertura e Inversores Calificados que buscan exposición a activos alternativos en LATAM con estándares globales de cumplimiento y reporting.",
+          "benefits": {
+            "0": "Oportunidades de Co-inversión directa (Deal-by-deal).",
+            "1": "Sin fees de gestión en estructuras específicas.",
+            "2": "Reportes trimestrales bajo estándares ILPA.",
+            "3": "Estructuras legales robustas (Fideicomisos, SPVs locales y offshore)."
+          }
+        }
+      }
+    }
+  },
+  "falcon_engine": {
+    "title": "El Motor Falcon",
+    "subtitle": "Cómo nuestro ecosistema genera valor continuo.",
+    "nodes": {
+      "1": {
+        "title": "Capital Inversor",
+        "desc": "Entrada de capital de Retail, CBI e Institucionales."
+      },
+      "2": {
+        "title": "Allocation Estratégico",
+        "desc": "Distribución inteligente: 60% Tesorería (Seguridad) + 40% Startups (Potencial)."
+      },
+      "3": {
+        "title": "Potenciación",
+        "desc": "Nuestras divisiones prestan servicios a las startups, reduciendo sus costos y riesgos."
+      },
+      "4": {
+        "title": "Crecimiento Exponencial",
+        "desc": "Las startups crecen más rápido y con mejores fundamentos."
+      },
+      "5": {
+        "title": "Retorno del Ciclo",
+        "desc": "El crecimiento aumenta el NAV del fondo, atrayendo más capital."
+      }
+    }
+  },
+  "school_teaser": {
+    "badge": "FALCON SCHOOL",
+    "title": "Escuela de Soberanía Financiera",
+    "desc": "Domina las reglas del dinero. Aprende a pensar como un propietario, no como un consumidor. Educación financiera de elite, ahora accesible.",
+    "cta": "ACCEDER GRATIS",
+    "social_proof": "+1,200 Alumnos inscritos este mes",
+    "items": {
+      "0": "Blindaje Patrimonial",
+      "1": "Lectura de Mercados",
+      "2": "Visión de Dueño"
+    }
+  },
+  "testimonials": {
+    "stats": {
+      "aum": "Activos Gestionados",
+      "startups": "Startups en Portafolio",
+      "jobs": "Empleos Generados"
+    },
+    "quote": "Falcon Pampas entendió lo que otros fondos ignoran: el verdadero valor está en conectar la economía real con la innovación tecnológica. No solo invierten capital, invierten estructura.",
+    "author": "Martín G.",
+    "role": "CEO, AgriTech Partner"
+  },
+  "final_cta": {
+    "title": "Sea Parte de la Reconstrucción de Argentina",
+    "desc": "El futuro se construye hoy. Únase a los inversores que apuestan por la Argentina productiva y sea protagonista del cambio económico.",
+    "cta_meeting": "SOLICITAR REUNIÓN",
+    "cta_deck": "DESCARGAR DECK"
+  },
+  "portfolio": {
+    "stats": {
+      "active_startups": "Startups Activas",
+      "capital_deployed": "Capital Desplegado",
+      "jobs_generated": "Empleos Generados",
+      "survival_rate": "Tasa de Supervivencia"
     }
   }
 }

@@ -1,44 +1,46 @@
 import React, { useState } from 'react';
 import { motion } from 'framer-motion';
 import { Users, PieChart, Briefcase, TrendingUp, RefreshCw } from 'lucide-react';
+import { useTranslation } from 'react-i18next';
 
 const FalconEngineSection: React.FC = () => {
+  const { t } = useTranslation();
   const [activeNode, setActiveNode] = useState<number | null>(null);
 
   const nodes = [
     {
       id: 1,
-      title: "Capital Inversor",
+      title: t('falcon_engine.nodes.1.title'),
       icon: <Users size={24} />,
-      description: "Entrada de capital de Retail, CBI e Institucionales.",
+      description: t('falcon_engine.nodes.1.desc'),
       pos: { top: '10%', left: '50%' }
     },
     {
       id: 2,
-      title: "Allocation Estratégico",
+      title: t('falcon_engine.nodes.2.title'),
       icon: <PieChart size={24} />,
-      description: "Distribución inteligente: 60% Tesorería (Seguridad) + 40% Startups (Potencial).",
+      description: t('falcon_engine.nodes.2.desc'),
       pos: { top: '35%', left: '50%' }
     },
     {
       id: 3,
-      title: "Potenciación",
+      title: t('falcon_engine.nodes.3.title'),
       icon: <Briefcase size={24} />,
-      description: "Nuestras divisiones prestan servicios a las startups, reduciendo sus costos y riesgos.",
+      description: t('falcon_engine.nodes.3.desc'),
       pos: { top: '60%', left: '75%' }
     },
     {
       id: 4,
-      title: "Crecimiento Exponencial",
+      title: t('falcon_engine.nodes.4.title'),
       icon: <TrendingUp size={24} />,
-      description: "Las startups crecen más rápido y con mejores fundamentos.",
+      description: t('falcon_engine.nodes.4.desc'),
       pos: { top: '60%', left: '25%' }
     },
     {
       id: 5,
-      title: "Retorno del Ciclo",
+      title: t('falcon_engine.nodes.5.title'),
       icon: <RefreshCw size={24} />,
-      description: "El crecimiento aumenta el NAV del fondo, atrayendo más capital.",
+      description: t('falcon_engine.nodes.5.desc'),
       pos: { top: '85%', left: '50%' }
     }
   ];
@@ -49,9 +51,9 @@ const FalconEngineSection: React.FC = () => {
         
         <div style={{ marginBottom: '4rem' }}>
           <h2 style={{ fontSize: '2.5rem', fontFamily: 'var(--font-primary)', color: 'var(--color-navy-deep)' }}>
-            El Motor Falcon
+            {t('falcon_engine.title')}
           </h2>
-          <p style={{ color: 'var(--color-gray-slate)' }}>Cómo nuestro ecosistema genera valor continuo.</p>
+          <p style={{ color: 'var(--color-gray-slate)' }}>{t('falcon_engine.subtitle')}</p>
         </div>
 
         <div style={{ position: 'relative', height: '600px', backgroundColor: 'rgba(12, 29, 54, 0.03)', borderRadius: '20px' }}>

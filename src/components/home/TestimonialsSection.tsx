@@ -1,11 +1,28 @@
 import React from 'react';
+import { useTranslation } from 'react-i18next';
 
 
 const TestimonialsSection: React.FC = () => {
+  const { t } = useTranslation();
+
   return (
     <section style={{ padding: '6rem 2rem', backgroundColor: 'var(--color-navy-deep)', borderTop: '1px solid rgba(255,255,255,0.05)' }}>
        <div style={{ maxWidth: '1200px', margin: '0 auto' }}>
           
+          {/* Stats Title */}
+          <div style={{ textAlign: 'center', marginBottom: '3rem' }}>
+            <h2 style={{ 
+              color: 'var(--color-white)', 
+              fontSize: '2rem', 
+              fontFamily: 'var(--font-primary)',
+              letterSpacing: '1px',
+              textTransform: 'uppercase'
+            }}>
+              {t('common.objectives')}
+            </h2>
+            <div style={{ width: '60px', height: '3px', backgroundColor: 'var(--color-gold-imperial)', margin: '1rem auto' }}></div>
+          </div>
+
           {/* Stats */}
           <div style={{ 
             display: 'flex', 
@@ -17,9 +34,9 @@ const TestimonialsSection: React.FC = () => {
             marginBottom: '4rem'
           }}>
              {[
-               { number: "$45M+", label: "Activos Gestionados" },
-               { number: "18", label: "Startups en Portafolio" },
-               { number: "350+", label: "Empleos Generados" }
+               { number: "$45M+", label: t('testimonials.stats.aum') },
+               { number: "18", label: t('testimonials.stats.startups') },
+               { number: "350+", label: t('testimonials.stats.jobs') }
              ].map((stat, i) => (
                <div key={i} style={{ textAlign: 'center' }}>
                  <div style={{ fontSize: '3rem', fontWeight: 700, color: 'var(--color-gold-imperial)', fontFamily: 'var(--font-mono)' }}>{stat.number}</div>
@@ -38,12 +55,12 @@ const TestimonialsSection: React.FC = () => {
               lineHeight: 1.6,
               marginBottom: '2rem' 
             }}>
-              Falcon Pampas entendió lo que otros fondos ignoran: el verdadero valor está en conectar la economía real con la innovación tecnológica. No solo invierten capital, invierten estructura.
+              {t('testimonials.quote')}
             </h3>
             
             <div>
-              <div style={{ fontWeight: 600, color: 'var(--color-gold-imperial)' }}>Martín G.</div>
-              <div style={{ fontSize: '0.9rem', color: 'rgba(255,255,255,0.5)' }}>CEO, AgriTech Partner</div>
+              <div style={{ fontWeight: 600, color: 'var(--color-gold-imperial)' }}>{t('testimonials.author')}</div>
+              <div style={{ fontSize: '0.9rem', color: 'rgba(255,255,255,0.5)' }}>{t('testimonials.role')}</div>
             </div>
           </div>
 

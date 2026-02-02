@@ -2,51 +2,53 @@ import React from 'react';
 import { motion } from 'framer-motion';
 import { Rocket, BarChart3, Factory, Palette, Code2, TrendingUp, ArrowRight } from 'lucide-react';
 import { useNavigate } from 'react-router-dom';
+import { useTranslation } from 'react-i18next';
 
 const EcosystemSection: React.FC = () => {
+  const { t } = useTranslation();
   const navigate = useNavigate();
   const divisions = [
     {
       id: 'ventures',
-      title: "FP-VENTURES",
-      tagline: "Capital semilla para el talento argentino",
+      title: t('home_ecosystem.divisions.ventures.title'),
+      tagline: t('home_ecosystem.divisions.ventures.tagline'),
       icon: <Rocket size={24} />,
-      color: "#00CED1" // Cyan
+      color: "#00CED1"
     },
     {
       id: 'cap',
-      title: "FP-CAP",
-      tagline: "Gestión de tesorería y renta fija",
+      title: t('home_ecosystem.divisions.cap.title'),
+      tagline: t('home_ecosystem.divisions.cap.tagline'),
       icon: <BarChart3 size={24} />,
-      color: "#4169E1" // Royal Blue
+      color: "#4169E1"
     },
     {
       id: 'real',
-      title: "FP-REAL",
-      tagline: "Activos reales: agro, energía, real estate",
+      title: t('home_ecosystem.divisions.real.title'),
+      tagline: t('home_ecosystem.divisions.real.tagline'),
       icon: <Factory size={24} />,
-      color: "#2E8B57" // Sea Green
+      color: "#2E8B57"
     },
     {
       id: 'media',
-      title: "FALCON MEDIA",
-      tagline: "Branding y marketing para startups",
+      title: t('home_ecosystem.divisions.media.title'),
+      tagline: t('home_ecosystem.divisions.media.tagline'),
       icon: <Palette size={24} />,
-      color: "#9370DB" // Medium Purple
+      color: "#9370DB"
     },
     {
       id: 'tech',
-      title: "FALCON TECH",
-      tagline: "Desarrollo de software e IA",
+      title: t('home_ecosystem.divisions.tech.title'),
+      tagline: t('home_ecosystem.divisions.tech.tagline'),
       icon: <Code2 size={24} />,
-      color: "#00BFFF" // Deep Sky Blue
+      color: "#00BFFF"
     },
     {
       id: 'sales',
-      title: "FALCON SALES",
-      tagline: "Fuerza de ventas profesional",
+      title: t('home_ecosystem.divisions.sales.title'),
+      tagline: t('home_ecosystem.divisions.sales.tagline'),
       icon: <TrendingUp size={24} />,
-      color: "#FF8C00" // Dark Orange
+      color: "#FF8C00"
     }
   ];
 
@@ -55,9 +57,9 @@ const EcosystemSection: React.FC = () => {
       <div style={{ maxWidth: '1200px', margin: '0 auto' }}>
         
         <div style={{ marginBottom: '4rem', textAlign: 'center' }}>
-          <span style={{ color: 'var(--color-gold-imperial)', fontWeight: 700, letterSpacing: '2px', fontSize: '0.9rem' }}>NUESTRAS DIVISIONES</span>
+          <span style={{ color: 'var(--color-gold-imperial)', fontWeight: 700, letterSpacing: '2px', fontSize: '0.9rem' }}>{t('home_ecosystem.label')}</span>
           <h2 style={{ fontSize: '2.5rem', fontFamily: 'var(--font-primary)', color: 'var(--color-white)', marginTop: '1rem' }}>
-            Un Ecosistema Diseñado para Multiplicar
+            {t('home_ecosystem.title')}
           </h2>
         </div>
 
@@ -97,12 +99,6 @@ const EcosystemSection: React.FC = () => {
                 pointerEvents: 'none',
                 zIndex: 1
               }} className="hover-border" /> 
-              {/* Note: Standard CSS hover to work with inline styles needs state or CSS classes. 
-                 Since I can't add CSS classes easily to global css right now without context switching, 
-                 I'll rely on Framer Motion 'whileHover' for the main container transform/bg. 
-                 For the child elements changing color, I might need a bit of state or pure CSS. 
-                 Let's stick to simple efficient Framer Motion. 
-              */}
 
               <div style={{ 
                 display: 'inline-flex', 
@@ -138,7 +134,7 @@ const EcosystemSection: React.FC = () => {
                 fontSize: '0.9rem',
                 marginTop: 'auto'
               }}>
-                Explorar <ArrowRight size={16} />
+                {t('home_ecosystem.explore')} <ArrowRight size={16} />
               </div>
 
             </motion.div>

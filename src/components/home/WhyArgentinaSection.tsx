@@ -1,8 +1,10 @@
 import React, { useRef } from 'react';
 import { motion, useScroll, useSpring } from 'framer-motion';
 import { Flame, Database, Wheat, TrendingUp, MapPin } from 'lucide-react';
+import { useTranslation } from 'react-i18next';
 
 const WhyArgentinaSection: React.FC = () => {
+  const { t } = useTranslation();
   const containerRef = useRef<HTMLDivElement>(null);
   const { scrollYProgress } = useScroll({
     target: containerRef,
@@ -18,34 +20,34 @@ const WhyArgentinaSection: React.FC = () => {
   const reasons = [
     {
       id: 1,
-      title: "VACA MUERTA",
+      title: t('why_argentina.reasons.vaca_muerta.title'),
       number: "2ª",
-      subtitle: "Reserva de shale gas más grande del mundo",
-      description: "Potencial para convertir a Argentina en exportador neto de energía.",
+      subtitle: t('why_argentina.reasons.vaca_muerta.subtitle'),
+      description: t('why_argentina.reasons.vaca_muerta.desc'),
       icon: <Flame size={32} />
     },
     {
       id: 2,
-      title: "LITIO",
+      title: t('why_argentina.reasons.lithium.title'),
       number: "21%",
-      subtitle: "De las reservas mundiales",
-      description: "Parte del triángulo del litio, clave para la transición energética global.",
+      subtitle: t('why_argentina.reasons.lithium.subtitle'),
+      description: t('why_argentina.reasons.lithium.desc'),
       icon: <Database size={32} /> 
     },
     {
       id: 3,
-      title: "AGROINDUSTRIA",
+      title: t('why_argentina.reasons.agribusiness.title'),
       number: "3º",
-      subtitle: "Exportador mundial de soja y maíz",
-      description: "La potencia alimentaria más eficiente del planeta.",
+      subtitle: t('why_argentina.reasons.agribusiness.subtitle'),
+      description: t('why_argentina.reasons.agribusiness.desc'),
       icon: <Wheat size={32} />
     },
     {
       id: 4,
-      title: "RECUPERACIÓN",
+      title: t('why_argentina.reasons.recovery.title'),
       number: "P/E",
-      subtitle: "Activos a precio de liquidación",
-      description: "Fundamentos de potencia mundial con valuaciones de crisis.",
+      subtitle: t('why_argentina.reasons.recovery.subtitle'),
+      description: t('why_argentina.reasons.recovery.desc'),
       icon: <TrendingUp size={32} />
     }
   ];
@@ -55,8 +57,8 @@ const WhyArgentinaSection: React.FC = () => {
       <div style={{ maxWidth: '1000px', margin: '0 auto' }}>
         
         <div style={{ textAlign: 'center', marginBottom: '5rem' }}>
-          <span style={{ color: 'var(--color-gold-imperial)', fontWeight: 700, letterSpacing: '2px', fontSize: '0.9rem' }}>LA OPORTUNIDAD</span>
-          <h2 style={{ fontSize: '3rem', fontFamily: 'var(--font-primary)', color: 'var(--color-navy-deep)', marginTop: '0.5rem' }}>El Momento es Ahora</h2>
+          <span style={{ color: 'var(--color-gold-imperial)', fontWeight: 700, letterSpacing: '2px', fontSize: '0.9rem' }}>{t('why_argentina.label')}</span>
+          <h2 style={{ fontSize: '3rem', fontFamily: 'var(--font-primary)', color: 'var(--color-navy-deep)', marginTop: '0.5rem' }}>{t('why_argentina.title')}</h2>
         </div>
 
         <div style={{ position: 'relative' }}>
@@ -159,7 +161,7 @@ const WhyArgentinaSection: React.FC = () => {
         {/* Floating Map Hint - Visual Only */}
         <div style={{ position: 'sticky', bottom: '2rem', textAlign: 'center', opacity: 0.5, marginTop: '4rem' }}>
            <MapPin size={16} style={{ display: 'inline-block', verticalAlign: 'middle', marginRight: '0.5rem' }} />
-           <span style={{ fontSize: '0.8rem' }}>Argentina: Tierra de Oportunidades</span>
+           <span style={{ fontSize: '0.8rem' }}>{t('why_argentina.hint')}</span>
         </div>
 
       </div>

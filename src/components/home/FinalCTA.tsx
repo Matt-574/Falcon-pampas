@@ -1,8 +1,10 @@
 import { useNavigate } from 'react-router-dom';
 import { motion } from 'framer-motion';
 import { ArrowRight, Download } from 'lucide-react';
+import { useTranslation } from 'react-i18next';
 
 const FinalCTA: React.FC = () => {
+  const { t } = useTranslation();
   const navigate = useNavigate();
 
   return (
@@ -37,7 +39,7 @@ const FinalCTA: React.FC = () => {
               marginBottom: '1.5rem',
               lineHeight: 1.1
             }}>
-              Sea Parte de la Reconstrucción de Argentina
+              {t('final_cta.title')}
             </h2>
             <p style={{ 
               color: '#4A5568', 
@@ -46,7 +48,7 @@ const FinalCTA: React.FC = () => {
               lineHeight: 1.6,
               maxWidth: '600px'
             }}>
-              El futuro se construye hoy. Únase a los inversores que apuestan por la Argentina productiva y sea protagonista del cambio económico.
+              {t('final_cta.desc')}
             </p>
 
             <div style={{ display: 'flex', gap: '1.5rem', flexWrap: 'wrap' }}>
@@ -67,7 +69,7 @@ const FinalCTA: React.FC = () => {
                 boxShadow: '0 4px 6px rgba(184, 134, 11, 0.2)',
                 transition: 'transform 0.2s'
               }}>
-                SOLICITAR REUNIÓN <ArrowRight size={18} />
+                {t('final_cta.cta_meeting')} <ArrowRight size={18} />
               </button>
 
               <button 
@@ -96,7 +98,7 @@ const FinalCTA: React.FC = () => {
                     transition: 'all 0.3s ease'
                 }}
             >
-                <Download size={18} /> DESCARGAR DECK
+                <Download size={18} /> {t('final_cta.cta_deck')}
             </button>
             </div>
           </motion.div>

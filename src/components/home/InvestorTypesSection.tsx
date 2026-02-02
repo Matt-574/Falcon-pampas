@@ -1,71 +1,85 @@
 import React, { useState } from 'react';
 import { motion } from 'framer-motion';
 import { Smartphone, Globe, Building, CheckCircle2 } from 'lucide-react';
+import { useTranslation } from 'react-i18next';
 import Modal from '../common/Modal';
 
 const InvestorTypesSection: React.FC = () => {
+  const { t } = useTranslation();
   const [activeModal, setActiveModal] = useState<string | null>(null);
 
   const types = [
     {
       id: "retail",
       icon: <Smartphone size={32} />,
-      title: "Retail",
-      subtitle: "Falcon App",
-      badge: "PRÓXIMAMENTE",
-      ticket: "$50 - $500 / mes",
-      description: "Acceso democrático a inversiones de calibre institucional desde tu celular.",
-      features: ["Micro-inversión", "Liquidez inmediata", "Cero comisiones ocultas"],
+      title: t('investor_types.types.retail.title'),
+      subtitle: t('investor_types.types.retail.subtitle'),
+      badge: t('investor_types.coming_soon'),
+      ticket: "$50 - $500 / mes", // Keep hardcoded currency format or move to translation? keeping format for now, text part "/ mes" maybe translatable but sticking to format.
+      description: t('investor_types.types.retail.desc'),
+      features: [
+        t('investor_types.types.retail.features.0'),
+        t('investor_types.types.retail.features.1'),
+        t('investor_types.types.retail.features.2')
+      ],
       dark: false,
       details: {
-        title: "Falcon App - Inversión Retail",
-        longDesc: "La democratización de las inversiones de alto calibre. Nuestra plataforma móvil permitirá a cualquier persona acceder a participaciones fraccionadas en proyectos de Real Estate Premium, Agroindustria Exportadora y Startups Tecnológicas, activos que históricamente estuvieron reservados para grandes capitales.",
+        title: t('investor_types.types.retail.details.title'),
+        longDesc: t('investor_types.types.retail.details.long_desc'),
         benefits: [
-          "Ticket de entrada accesible desde $50.",
-          "Mercado secundario para liquidez inmediata.",
-          "Diversificación automática en múltiples activos.",
-          "Gestión 100% digital desde la App."
+          t('investor_types.types.retail.details.benefits.0'),
+          t('investor_types.types.retail.details.benefits.1'),
+          t('investor_types.types.retail.details.benefits.2'),
+          t('investor_types.types.retail.details.benefits.3')
         ]
       }
     },
     {
       id: "cbi",
       icon: <Globe size={32} />,
-      title: "CBI",
-      subtitle: "Ciudadanía por Inversión",
-      badge: "PROGRAMA EXCLUSIVO",
+      title: t('investor_types.types.cbi.title'),
+      subtitle: t('investor_types.types.cbi.subtitle'),
+      badge: t('investor_types.exclusive_program'),
       ticket: "$550,000 USD",
-      description: "Obtenga la residencia y ciudadanía argentina invirtiendo en sectores estratégicos.",
-      features: ["Pasaporte Argentino", "Beneficios fiscales", "Concierge Service"],
+      description: t('investor_types.types.cbi.desc'),
+      features: [
+        t('investor_types.types.cbi.features.0'),
+        t('investor_types.types.cbi.features.1'),
+        t('investor_types.types.cbi.features.2')
+      ],
       dark: true,
       details: {
-        title: "Ciudadanía por Inversión (CBI)",
-        longDesc: "Un programa exclusivo diseñado para inversores internacionales que buscan obtener residencia legal y ciudadanía argentina mediante inversiones estratégicas en la economía real del país. Facilitamos todo el proceso legal y migratorio mientras su capital trabaja en sectores productivos de alto rendimiento.",
+        title: t('investor_types.types.cbi.details.title'),
+        longDesc: t('investor_types.types.cbi.details.long_desc'),
         benefits: [
-          "Tramitación acelerada de Residencia y Ciudadanía.",
-          "Pasaporte Mercosur con acceso global.",
-          "Planificación fiscal internacional eficiente.",
-          "Servicio de Concierge VIP para relocation y lifestyle."
+          t('investor_types.types.cbi.details.benefits.0'),
+          t('investor_types.types.cbi.details.benefits.1'),
+          t('investor_types.types.cbi.details.benefits.2'),
+          t('investor_types.types.cbi.details.benefits.3')
         ]
       }
     },
     {
       id: "institutional",
       icon: <Building size={32} />,
-      title: "Institucional",
-      subtitle: "Family Offices & Fondos",
+      title: t('investor_types.types.institutional.title'),
+      subtitle: t('investor_types.types.institutional.subtitle'),
       ticket: "$500k+ USD",
-      description: "Vehículos estructurados a medida para preservación y multiplicación de patrimonio.",
-      features: ["Co-inversión directa", "Reportes trimestrales", "Estructuración legal"],
+      description: t('investor_types.types.institutional.desc'),
+      features: [
+        t('investor_types.types.institutional.features.0'),
+        t('investor_types.types.institutional.features.1'),
+        t('investor_types.types.institutional.features.2')
+      ],
       dark: false,
       details: {
-        title: "Soluciones Institucionales",
-        longDesc: "Vehículos de inversión hechos a medida para Family Offices, Fondos de Cobertura e Inversores Calificados que buscan exposición a activos alternativos en LATAM con estándares globales de cumplimiento y reporting.",
+        title: t('investor_types.types.institutional.details.title'),
+        longDesc: t('investor_types.types.institutional.details.long_desc'),
         benefits: [
-          "Oportunidades de Co-inversión directa (Deal-by-deal).",
-          "Sin fees de gestión en estructuras específicas.",
-          "Reportes trimestrales bajo estándares ILPA.",
-          "Estructuras legales robustas (Fideicomisos, SPVs locales y offshore)."
+          t('investor_types.types.institutional.details.benefits.0'),
+          t('investor_types.types.institutional.details.benefits.1'),
+          t('investor_types.types.institutional.details.benefits.2'),
+          t('investor_types.types.institutional.details.benefits.3')
         ]
       }
     }
@@ -79,9 +93,9 @@ const InvestorTypesSection: React.FC = () => {
         
         <div style={{ textAlign: 'center', marginBottom: '4rem' }}>
           <h2 style={{ fontSize: '2.5rem', fontFamily: 'var(--font-primary)', color: 'var(--color-navy-deep)' }}>
-            Encuentra Tu Camino
+            {t('investor_types.title')}
           </h2>
-          <p style={{ color: 'var(--color-gray-slate)', marginTop: '0.5rem' }}>Soluciones adaptadas a cada etapa de tu crecimiento financiero.</p>
+          <p style={{ color: 'var(--color-gray-slate)', marginTop: '0.5rem' }}>{t('investor_types.subtitle')}</p>
         </div>
 
         <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(300px, 1fr))', gap: '2rem' }}>
@@ -130,7 +144,7 @@ const InvestorTypesSection: React.FC = () => {
               </span>
 
               <div style={{ marginBottom: '2rem' }}>
-                <span style={{ display: 'block', fontSize: '0.8rem', opacity: 0.6 }}>TICKET DE ENTRADA</span>
+                <span style={{ display: 'block', fontSize: '0.8rem', opacity: 0.6 }}>{t('investor_types.ticket_label')}</span>
                 <span style={{ fontSize: '1.4rem', fontWeight: 600, fontFamily: 'var(--font-mono)' }}>{type.ticket}</span>
               </div>
 
@@ -161,7 +175,7 @@ const InvestorTypesSection: React.FC = () => {
                   transition: 'all 0.3s'
                 }}
               >
-                MÁS INFORMACIÓN
+                {t('investor_types.more_info')}
               </button>
 
             </motion.div>
@@ -181,7 +195,7 @@ const InvestorTypesSection: React.FC = () => {
               </p>
               
               <h4 style={{ fontSize: '1rem', fontWeight: 700, marginBottom: '1rem', color: '#1E293B', textTransform: 'uppercase', letterSpacing: '1px' }}>
-                Beneficios Clave
+                {t('investor_types.key_benefits')}
               </h4>
               
               <ul style={{ listStyle: 'none', padding: 0 }}>
@@ -195,7 +209,7 @@ const InvestorTypesSection: React.FC = () => {
 
               <div style={{ marginTop: '2.5rem', padding: '1.5rem', backgroundColor: '#F8FAFC', borderRadius: '8px', borderLeft: '4px solid var(--color-gold-imperial)' }}>
                 <p style={{ margin: 0, fontSize: '0.9rem', color: '#64748B', fontStyle: 'italic' }}>
-                  Para más información detallada sobre este programa, por favor contacte a nuestro equipo de Relaciones con Inversores.
+                  {t('investor_types.modal_disclaimer')}
                 </p>
               </div>
             </div>
